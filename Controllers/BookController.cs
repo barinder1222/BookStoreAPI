@@ -101,9 +101,9 @@ namespace BookStoreAPI.Controllers
         {
             try
             {
-                if (ModelState.IsValid)
+                if (!ModelState.IsValid)
                 {
-
+                    throw new Exception("All fields are required");
                 }
                 using (BookStoreEntities1 entities1 = new BookStoreEntities1())
                 {
