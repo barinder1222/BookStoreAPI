@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BookStoreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="authors">
+          <Key>
+            <PropertyRef Name="author_id" />
+          </Key>
+          <Property Name="author_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="first_name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="middle_name" Type="varchar" MaxLength="50" />
+          <Property Name="last_name" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="book_authors">
+          <Key>
+            <PropertyRef Name="book_id" />
+            <PropertyRef Name="author_id" />
+          </Key>
+          <Property Name="book_id" Type="int" Nullable="false" />
+          <Property Name="author_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="book_genres">
+          <Key>
+            <PropertyRef Name="book_id" />
+            <PropertyRef Name="genre_id" />
+          </Key>
+          <Property Name="book_id" Type="int" Nullable="false" />
+          <Property Name="genre_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="books">
+          <Key>
+            <PropertyRef Name="book_id" />
+          </Key>
+          <Property Name="book_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="total_pages" Type="int" />
+          <Property Name="rating" Type="decimal" Precision="4" Scale="2" />
+          <Property Name="isbn" Type="varchar" MaxLength="13" />
+          <Property Name="published_date" Type="date" />
+          <Property Name="publisher_id" Type="int" />
+        </EntityType>
+        <EntityType Name="genres">
+          <Key>
+            <PropertyRef Name="genre_id" />
+          </Key>
+          <Property Name="genre_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="genre" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="parent_id" Type="int" />
+        </EntityType>
+        <EntityType Name="publishers">
+          <Key>
+            <PropertyRef Name="publisher_id" />
+          </Key>
+          <Property Name="publisher_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <Association Name="fk_author">
+          <End Role="authors" Type="Self.authors" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="book_authors" Type="Self.book_authors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="authors">
+              <PropertyRef Name="author_id" />
+            </Principal>
+            <Dependent Role="book_authors">
+              <PropertyRef Name="author_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_bgenre">
+          <End Role="genres" Type="Self.genres" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="book_genres" Type="Self.book_genres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="genres">
+              <PropertyRef Name="genre_id" />
+            </Principal>
+            <Dependent Role="book_genres">
+              <PropertyRef Name="genre_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_book">
+          <End Role="books" Type="Self.books" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="book_authors" Type="Self.book_authors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="books">
+              <PropertyRef Name="book_id" />
+            </Principal>
+            <Dependent Role="book_authors">
+              <PropertyRef Name="book_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_gbook">
+          <End Role="books" Type="Self.books" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="book_genres" Type="Self.book_genres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="books">
+              <PropertyRef Name="book_id" />
+            </Principal>
+            <Dependent Role="book_genres">
+              <PropertyRef Name="book_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_parent">
+          <End Role="genres" Type="Self.genres" Multiplicity="0..1" />
+          <End Role="genres1" Type="Self.genres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="genres">
+              <PropertyRef Name="genre_id" />
+            </Principal>
+            <Dependent Role="genres1">
+              <PropertyRef Name="parent_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_publisher">
+          <End Role="publishers" Type="Self.publishers" Multiplicity="0..1" />
+          <End Role="books" Type="Self.books" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="publishers">
+              <PropertyRef Name="publisher_id" />
+            </Principal>
+            <Dependent Role="books">
+              <PropertyRef Name="publisher_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BookStoreModelStoreContainer">
+          <EntitySet Name="authors" EntityType="Self.authors" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="book_authors" EntityType="Self.book_authors" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="book_genres" EntityType="Self.book_genres" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="books" EntityType="Self.books" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="genres" EntityType="Self.genres" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="publishers" EntityType="Self.publishers" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="fk_author" Association="Self.fk_author">
+            <End Role="authors" EntitySet="authors" />
+            <End Role="book_authors" EntitySet="book_authors" />
+          </AssociationSet>
+          <AssociationSet Name="fk_bgenre" Association="Self.fk_bgenre">
+            <End Role="genres" EntitySet="genres" />
+            <End Role="book_genres" EntitySet="book_genres" />
+          </AssociationSet>
+          <AssociationSet Name="fk_book" Association="Self.fk_book">
+            <End Role="books" EntitySet="books" />
+            <End Role="book_authors" EntitySet="book_authors" />
+          </AssociationSet>
+          <AssociationSet Name="fk_gbook" Association="Self.fk_gbook">
+            <End Role="books" EntitySet="books" />
+            <End Role="book_genres" EntitySet="book_genres" />
+          </AssociationSet>
+          <AssociationSet Name="fk_parent" Association="Self.fk_parent">
+            <End Role="genres" EntitySet="genres" />
+            <End Role="genres1" EntitySet="genres" />
+          </AssociationSet>
+          <AssociationSet Name="fk_publisher" Association="Self.fk_publisher">
+            <End Role="publishers" EntitySet="publishers" />
+            <End Role="books" EntitySet="books" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BookStoreModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="author">
+          <Key>
+            <PropertyRef Name="author_id" />
+          </Key>
+          <Property Name="author_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="first_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="middle_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="last_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="books" Relationship="Self.book_authors" FromRole="authors" ToRole="books" />
+        </EntityType>
+        <EntityType Name="book">
+          <Key>
+            <PropertyRef Name="book_id" />
+          </Key>
+          <Property Name="book_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="total_pages" Type="Int32" />
+          <Property Name="rating" Type="Decimal" Precision="4" Scale="2" />
+          <Property Name="isbn" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="published_date" Type="DateTime" Precision="0" />
+          <Property Name="publisher_id" Type="Int32" />
+          <NavigationProperty Name="publisher" Relationship="Self.fk_publisher" FromRole="books" ToRole="publishers" />
+          <NavigationProperty Name="authors" Relationship="Self.book_authors" FromRole="books" ToRole="authors" />
+          <NavigationProperty Name="genres" Relationship="Self.book_genres" FromRole="books" ToRole="genres" />
+        </EntityType>
+        <EntityType Name="genre">
+          <Key>
+            <PropertyRef Name="genre_id" />
+          </Key>
+          <Property Name="genre_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="genre1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="parent_id" Type="Int32" />
+          <NavigationProperty Name="genres1" Relationship="Self.fk_parent" FromRole="genres" ToRole="genres1" />
+          <NavigationProperty Name="genre2" Relationship="Self.fk_parent" FromRole="genres1" ToRole="genres" />
+          <NavigationProperty Name="books" Relationship="Self.book_genres" FromRole="genres" ToRole="books" />
+        </EntityType>
+        <EntityType Name="publisher">
+          <Key>
+            <PropertyRef Name="publisher_id" />
+          </Key>
+          <Property Name="publisher_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="books" Relationship="Self.fk_publisher" FromRole="publishers" ToRole="books" />
+        </EntityType>
+        <Association Name="fk_publisher">
+          <End Role="publishers" Type="Self.publisher" Multiplicity="0..1" />
+          <End Role="books" Type="Self.book" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="publishers">
+              <PropertyRef Name="publisher_id" />
+            </Principal>
+            <Dependent Role="books">
+              <PropertyRef Name="publisher_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_parent">
+          <End Role="genres" Type="Self.genre" Multiplicity="0..1" />
+          <End Role="genres1" Type="Self.genre" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="genres">
+              <PropertyRef Name="genre_id" />
+            </Principal>
+            <Dependent Role="genres1">
+              <PropertyRef Name="parent_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="book_authors">
+          <End Role="authors" Type="Self.author" Multiplicity="*" />
+          <End Role="books" Type="Self.book" Multiplicity="*" />
+        </Association>
+        <Association Name="book_genres">
+          <End Role="genres" Type="Self.genre" Multiplicity="*" />
+          <End Role="books" Type="Self.book" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="BookStoreEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="authors" EntityType="Self.author" />
+          <EntitySet Name="books" EntityType="Self.book" />
+          <EntitySet Name="genres" EntityType="Self.genre" />
+          <EntitySet Name="publishers" EntityType="Self.publisher" />
+          <AssociationSet Name="fk_publisher" Association="Self.fk_publisher">
+            <End Role="publishers" EntitySet="publishers" />
+            <End Role="books" EntitySet="books" />
+          </AssociationSet>
+          <AssociationSet Name="fk_parent" Association="Self.fk_parent">
+            <End Role="genres" EntitySet="genres" />
+            <End Role="genres1" EntitySet="genres" />
+          </AssociationSet>
+          <AssociationSet Name="book_authors" Association="Self.book_authors">
+            <End Role="authors" EntitySet="authors" />
+            <End Role="books" EntitySet="books" />
+          </AssociationSet>
+          <AssociationSet Name="book_genres" Association="Self.book_genres">
+            <End Role="genres" EntitySet="genres" />
+            <End Role="books" EntitySet="books" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BookStoreModelStoreContainer" CdmEntityContainer="BookStoreEntities1">
+          <EntitySetMapping Name="authors">
+            <EntityTypeMapping TypeName="BookStoreModel.author">
+              <MappingFragment StoreEntitySet="authors">
+                <ScalarProperty Name="author_id" ColumnName="author_id" />
+                <ScalarProperty Name="first_name" ColumnName="first_name" />
+                <ScalarProperty Name="middle_name" ColumnName="middle_name" />
+                <ScalarProperty Name="last_name" ColumnName="last_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="books">
+            <EntityTypeMapping TypeName="BookStoreModel.book">
+              <MappingFragment StoreEntitySet="books">
+                <ScalarProperty Name="book_id" ColumnName="book_id" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="total_pages" ColumnName="total_pages" />
+                <ScalarProperty Name="rating" ColumnName="rating" />
+                <ScalarProperty Name="isbn" ColumnName="isbn" />
+                <ScalarProperty Name="published_date" ColumnName="published_date" />
+                <ScalarProperty Name="publisher_id" ColumnName="publisher_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="genres">
+            <EntityTypeMapping TypeName="BookStoreModel.genre">
+              <MappingFragment StoreEntitySet="genres">
+                <ScalarProperty Name="genre_id" ColumnName="genre_id" />
+                <ScalarProperty Name="genre1" ColumnName="genre" />
+                <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="publishers">
+            <EntityTypeMapping TypeName="BookStoreModel.publisher">
+              <MappingFragment StoreEntitySet="publishers">
+                <ScalarProperty Name="publisher_id" ColumnName="publisher_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="book_authors" TypeName="BookStoreModel.book_authors" StoreEntitySet="book_authors">
+            <EndProperty Name="authors">
+              <ScalarProperty Name="author_id" ColumnName="author_id" />
+            </EndProperty>
+            <EndProperty Name="books">
+              <ScalarProperty Name="book_id" ColumnName="book_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="book_genres" TypeName="BookStoreModel.book_genres" StoreEntitySet="book_genres">
+            <EndProperty Name="genres">
+              <ScalarProperty Name="genre_id" ColumnName="genre_id" />
+            </EndProperty>
+            <EndProperty Name="books">
+              <ScalarProperty Name="book_id" ColumnName="book_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
