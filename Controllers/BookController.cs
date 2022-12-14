@@ -12,16 +12,18 @@ namespace BookStoreAPI.Controllers
 {
     public class BookController : ApiController
     {
+        BookStoreEntities1 bookStore;
+        public BookController()
+        {
+            bookStore = new BookStoreEntities1();
+        }
         [HttpGet]
         [Route("book/getallbooks")]
         public IEnumerable<book> GetAllBooks()
         {
             Program.logger.Info(Request.ToString());
 
-            using (BookStoreEntities1 entities1 = new BookStoreEntities1())
-            {
-                return entities1.books.ToList();
-            }
+            return bookStore.books.ToList();
 
         }
 
@@ -41,14 +43,13 @@ namespace BookStoreAPI.Controllers
                 }
 
                 Program.logger.Info(Request);
-                using (BookStoreEntities1 entities1 = new BookStoreEntities1())
-                {
-                    entities1.books.Add(book);
-                    entities1.SaveChanges();
-                    var message = Request.CreateResponse(HttpStatusCode.Created, book);
-                    message.Headers.Location = new Uri(Request.RequestUri + book.book_id.ToString());
-                    return message;
-                }
+
+                bookStore.books.Add(book);
+                bookStore.SaveChanges();
+                var message = Request.CreateResponse(HttpStatusCode.Created, book);
+                message.Headers.Location = new Uri(Request.RequestUri + book.book_id.ToString());
+                return message;
+
             }
 
             catch (Exception ex)
@@ -70,9 +71,8 @@ namespace BookStoreAPI.Controllers
             try
             {
                 Program.logger.Info(JsonConvert.SerializeObject(id));
-                using (BookStoreEntities1 entities1 = new BookStoreEntities1())
                 {
-                    var entity = entities1.books.FirstOrDefault(e => e.book_id == id);
+                    var entity = bookStore.books.FirstOrDefault(e => e.book_id == id);
                     if (entity == null)
                     {
                         return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Book Id " + id.ToString() + " not found");
@@ -80,10 +80,11 @@ namespace BookStoreAPI.Controllers
 
                     else
                     {
-                        entities1.books.Remove(entity);
-                        entities1.SaveChanges();
+                        bookStore.books.Remove(entity);
+                        bookStore.SaveChanges();
                         return Request.CreateResponse(HttpStatusCode.OK);
                     }
+
                 }
             }
 
@@ -112,27 +113,25 @@ namespace BookStoreAPI.Controllers
 
                 Program.logger.Info(Request.ToString());
 
-                using (BookStoreEntities1 entities1 = new BookStoreEntities1())
+
+                var entity = bookStore.books.FirstOrDefault(e => e.book_id == id);
+
+                if (entity == null)
                 {
-                    var entity = entities1.books.FirstOrDefault(e => e.book_id == id);
+                    return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Book Id " + id.ToString() + " not found");
+                }
 
-                    if (entity == null)
-                    {
-                        return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Book Id " + id.ToString() + " not found");
-                    }
+                else
+                {
+                    entity.title = book.title;
+                    entity.total_pages = book.total_pages;
+                    entity.rating = book.rating;
+                    entity.isbn = book.isbn;
+                    entity.published_date = book.published_date;
+                    entity.publisher_id = book.publisher_id;
 
-                    else
-                    {
-                        entity.title = book.title;
-                        entity.total_pages = book.total_pages;
-                        entity.rating = book.rating;
-                        entity.isbn = book.isbn;
-                        entity.published_date = book.published_date;
-                        entity.publisher_id = book.publisher_id;
-
-                        entities1.SaveChanges();
-                        return Request.CreateResponse(HttpStatusCode.OK, entity);
-                    }
+                    bookStore.SaveChanges();
+                    return Request.CreateResponse(HttpStatusCode.OK, entity);
                 }
             }
 
@@ -154,18 +153,15 @@ namespace BookStoreAPI.Controllers
             {
 
                 Program.logger.Info(Request);
-                using (BookStoreEntities1 entities1 = new BookStoreEntities1())
+                var entity = bookStore.books.FirstOrDefault(e => e.book_id == id);
+                if (entity != null)
                 {
-                    var entity = entities1.books.FirstOrDefault(e => e.book_id == id);
-                    if (entity != null)
-                    {
-                        return Request.CreateResponse(HttpStatusCode.OK, entity);
-                    }
+                    return Request.CreateResponse(HttpStatusCode.OK, entity);
+                }
 
-                    else
-                    {
-                        return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Book Id " + id.ToString() + " not found");
-                    }
+                else
+                {
+                    return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Book Id " + id.ToString() + " not found");
                 }
             }
 
@@ -188,21 +184,18 @@ namespace BookStoreAPI.Controllers
             {
                 Program.logger.Info(Request.ToString());
 
-                using (BookStoreEntities1 entities1 = new BookStoreEntities1())
+                List<book> books = new List<book>();
+
+                books = bookStore.books.Where(b => b.authors.Any(a => a.author_id.Equals(authorId))).ToList();
+
+                if (books != null && books.Count != 0)
                 {
-                    List<book> books = new List<book>();
+                    return Request.CreateResponse(HttpStatusCode.OK, books);
+                }
 
-                    books = entities1.books.Where(b => b.authors.Any(a => a.author_id.Equals(authorId))).ToList();
-
-                    if (books != null && books.Count != 0)
-                    {
-                        return Request.CreateResponse(HttpStatusCode.OK, books);
-                    }
-
-                    else
-                    {
-                        return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Books with Author Id " + authorId.ToString() + " not found");
-                    }
+                else
+                {
+                    return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Books with Author Id " + authorId.ToString() + " not found");
                 }
             }
 
@@ -225,23 +218,21 @@ namespace BookStoreAPI.Controllers
             {
                 Program.logger.Info(Request.ToString());
 
-                using (BookStoreEntities1 entities1 = new BookStoreEntities1())
+                List<book> books = new List<book>();
+
+                books = bookStore.books.Where(b => b.genres.Any(a => a.genre_id.Equals(genreId))).ToList();
+
+                if (books != null && books.Count != 0)
                 {
-                    List<book> books = new List<book>();
+                    return Request.CreateResponse(HttpStatusCode.OK, books);
+                }
 
-                    books = entities1.books.Where(b => b.genres.Any(a => a.genre_id.Equals(genreId))).ToList();
-
-                    if (books != null && books.Count != 0)
-                    {
-                        return Request.CreateResponse(HttpStatusCode.OK, books);
-                    }
-
-                    else
-                    {
-                        return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Books with Genre Id " + genreId.ToString() + " not found");
-                    }
+                else
+                {
+                    return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Books with Genre Id " + genreId.ToString() + " not found");
                 }
             }
+
 
             catch (Exception ex)
             {
@@ -262,23 +253,19 @@ namespace BookStoreAPI.Controllers
             {
                 Program.logger.Info(Request.ToString());
 
-                using (BookStoreEntities1 entities1 = new BookStoreEntities1())
+                List<book> books = new List<book>();
+                books = bookStore.books.Where(e => e.publisher_id == publisherId).ToList();
+
+                if (books != null && books.Count != 0)
                 {
-                    List<book> books = new List<book>();
-                    books = entities1.books.Where(e => e.publisher_id == publisherId).ToList();
+                    return Request.CreateResponse(HttpStatusCode.OK, books);
+                }
 
-                    if (books != null && books.Count != 0)
-                    {
-                        return Request.CreateResponse(HttpStatusCode.OK, books);
-                    }
-
-                    else
-                    {
-                        return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Books with Publisher Id " + publisherId.ToString() + " not found");
-                    }
+                else
+                {
+                    return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Books with Publisher Id " + publisherId.ToString() + " not found");
                 }
             }
-
             catch (Exception ex)
             {
                 Program.logger.Error(ex.Message);
@@ -297,21 +284,18 @@ namespace BookStoreAPI.Controllers
             {
                 Program.logger.Info(Request.ToString());
 
-                using (BookStoreEntities1 entities1 = new BookStoreEntities1())
+                List<book> books = new List<book>();
+
+                books = bookStore.books.Where(b => b.genres.Any(a => a.genre_id.Equals(genreId))).OrderByDescending(b => b.published_date).Take(10).ToList();
+
+                if (books != null && books.Count != 0)
                 {
-                    List<book> books = new List<book>();
+                    return Request.CreateResponse(HttpStatusCode.OK, books);
+                }
 
-                    books = entities1.books.Where(b => b.genres.Any(a => a.genre_id.Equals(genreId))).OrderByDescending(b => b.published_date).Take(10).ToList();
-
-                    if (books != null && books.Count != 0)
-                    {
-                        return Request.CreateResponse(HttpStatusCode.OK, books);
-                    }
-
-                    else
-                    {
-                        return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Books with Genre Id " + genreId.ToString() + " not found");
-                    }
+                else
+                {
+                    return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Books with Genre Id " + genreId.ToString() + " not found");
                 }
             }
 
@@ -333,21 +317,18 @@ namespace BookStoreAPI.Controllers
             try
             {
                 Program.logger.Info(JsonConvert.SerializeObject(book));
-                using (BookStoreEntities1 entities1 = new BookStoreEntities1())
+                var entity = bookStore.books.FirstOrDefault(e => e.book_id == id);
+
+                if (entity == null)
                 {
-                    var entity = entities1.books.FirstOrDefault(e => e.book_id == id);
+                    return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Book Id " + id.ToString() + " not found");
+                }
 
-                    if (entity == null)
-                    {
-                        return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Book Id " + id.ToString() + " not found");
-                    }
-
-                    else
-                    {
-                        entity.rating = book.rating;
-                        entities1.SaveChanges();
-                        return Request.CreateResponse(HttpStatusCode.OK, entity);
-                    }
+                else
+                {
+                    entity.rating = book.rating;
+                    bookStore.SaveChanges();
+                    return Request.CreateResponse(HttpStatusCode.OK, entity);
                 }
             }
 
@@ -370,20 +351,17 @@ namespace BookStoreAPI.Controllers
             {
                 Program.logger.Info(Request.ToString());
 
-                using (BookStoreEntities1 entities1 = new BookStoreEntities1())
+                List<book> books = new List<book>();
+                books = bookStore.books.Where(b => b.authors.Any(a => a.author_id.Equals(authorId)) && b.genres.Any(g => g.genre_id.Equals(genreid))).ToList();
+
+                if (books != null && books.Count != 0)
                 {
-                    List<book> books = new List<book>();
-                    books = entities1.books.Where(b => b.authors.Any(a => a.author_id.Equals(authorId)) && b.genres.Any(g => g.genre_id.Equals(genreid))).ToList();
+                    return Request.CreateResponse(HttpStatusCode.OK, books);
+                }
 
-                    if (books != null && books.Count != 0)
-                    {
-                        return Request.CreateResponse(HttpStatusCode.OK, books);
-                    }
-
-                    else
-                    {
-                        return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Books with Author Id " + authorId.ToString() + " and Genre Id " + genreid.ToString() + " not found");
-                    }
+                else
+                {
+                    return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Books with Author Id " + authorId.ToString() + " and Genre Id " + genreid.ToString() + " not found");
                 }
             }
 
