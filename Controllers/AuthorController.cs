@@ -10,8 +10,7 @@ namespace BookStoreAPI.Controllers
 {
     public class AuthorController : ApiController
     {
-        [HttpGet]
-        //[Route("GetAllBooks")]
+        [HttpGet]        
         public IEnumerable<author> GetAllBooks()
         {
             using (BookStoreEntities1 entities1 = new BookStoreEntities1())
