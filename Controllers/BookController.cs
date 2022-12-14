@@ -12,6 +12,7 @@ namespace BookStoreAPI.Controllers
     public class BookController : ApiController
     {
         [HttpGet]
+        [Route("api/book/getallbooks")]
         public IEnumerable<book> GetAllBooks()
         {
             using (BookStoreEntities1 entities1 = new BookStoreEntities1())
@@ -21,7 +22,10 @@ namespace BookStoreAPI.Controllers
 
         }        
 
+        
+        
         [HttpPost]
+        [Route("api/book/addbook/{id}")]
         public HttpResponseMessage AddBook([FromBody] book book)
         {
             try
@@ -46,7 +50,11 @@ namespace BookStoreAPI.Controllers
 
         }
 
+        
+        
+        
         [HttpDelete]
+        [Route("api/book/deletebook/{id}")]
         public HttpResponseMessage DeleteBook(int id)
         {
             try
@@ -76,7 +84,11 @@ namespace BookStoreAPI.Controllers
             }
         }
 
+        
+        
+        
         [HttpPut]
+        [Route("api/book/updatebook/{id}")]
         public HttpResponseMessage UpdateBook(int id, [FromBody] book book)
         {
             try
@@ -113,7 +125,11 @@ namespace BookStoreAPI.Controllers
             }
         }
 
+        
+        
+        
         [HttpGet]
+        [Route("api/books/{id}")]
         public HttpResponseMessage GetBookByID(int id)
         {
             try
@@ -141,8 +157,11 @@ namespace BookStoreAPI.Controllers
             }
         }
 
+        
+        
+        
         [HttpGet]
-        [Route("author/{authorId}/books")]
+        [Route("api/booksbyauthor/{authorId}/books")]
         public HttpResponseMessage GetBooksByAuthor(int authorId)
         {
             try
@@ -173,8 +192,11 @@ namespace BookStoreAPI.Controllers
         }
 
 
+        
+        
+        
         [HttpGet]
-        [Route("genre/{genreId}/books")]
+        [Route("api/booksbygenre/{genreId}/books")]
         public HttpResponseMessage GetBooksByGenre(int genreId)
         {
             try
@@ -205,8 +227,11 @@ namespace BookStoreAPI.Controllers
         }
 
 
+        
+        
+        
         [HttpGet]
-        [Route("publisher/{publisherId}/books")]
+        [Route("api/booksbypublisher/{publisherId}/books")]
         public HttpResponseMessage GetBooksByPublisher(int publisherId)
         {
             try
@@ -235,8 +260,11 @@ namespace BookStoreAPI.Controllers
             }
         }
 
+        
+        
+        
         [HttpGet]
-        [Route("genre/{genreId}/books/latest")]
+        [Route("api/latestbooksbygenre/{genreId}/books/latest")]
         public HttpResponseMessage GetLatestBooksByGenre(int genreId)
         {
             try
@@ -267,8 +295,11 @@ namespace BookStoreAPI.Controllers
         }
 
 
+        
+        
+        
         [HttpPut]
-        [Route("rate/{Id}")]
+        [Route("api/rateabook/rate/{Id}")]
         public HttpResponseMessage RateBookById(int id, [FromBody] book book)
         {
             try
@@ -301,8 +332,10 @@ namespace BookStoreAPI.Controllers
 
 
 
+        
+        
         [HttpGet]
-        [Route("{authorId}/{genreid}/books")]
+        [Route("api/bookbyauthorgenre/{authorId}/{genreid}/books")]
         public HttpResponseMessage GetBooksByAuthorAndGenre(int authorId, int genreid)
         {
             try
