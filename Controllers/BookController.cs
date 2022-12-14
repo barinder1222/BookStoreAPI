@@ -6,31 +6,34 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using BookStoreAPI.Helper;
 
 namespace BookStoreAPI.Controllers
 {
     public class BookController : ApiController
     {
         [HttpGet]
-        [Route("api/book/getallbooks")]
+        [Route("book/getallbooks")]
         public IEnumerable<book> GetAllBooks()
         {
+            Program.logger.Info(Request.ToString());
+
             using (BookStoreEntities1 entities1 = new BookStoreEntities1())
             {
                 return entities1.books.ToList();
             }
 
-        }        
+        }
 
-        
-        
+
+
         [HttpPost]
-        [Route("api/book/addbook/{id}")]
+        [Route("book/addbook")]
         public HttpResponseMessage AddBook([FromBody] book book)
         {
             try
             {
-                Program.logger.Info(JsonConvert.SerializeObject(book));
+                Program.logger.Info(Request);
                 using (BookStoreEntities1 entities1 = new BookStoreEntities1())
                 {
                     entities1.books.Add(book);
@@ -44,17 +47,17 @@ namespace BookStoreAPI.Controllers
             catch (Exception ex)
             {
                 Program.logger.Error(ex.Message);
+                Program.logger.Error(ex.InnerException);
+
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
             }
-
-
         }
 
-        
-        
-        
+
+
+
         [HttpDelete]
-        [Route("api/book/deletebook/{id}")]
+        [Route("book/deletebook/{id}")]
         public HttpResponseMessage DeleteBook(int id)
         {
             try
@@ -84,16 +87,17 @@ namespace BookStoreAPI.Controllers
             }
         }
 
-        
-        
-        
+
+
+
         [HttpPut]
-        [Route("api/book/updatebook/{id}")]
+        [Route("book/updatebook/{id}")]
         public HttpResponseMessage UpdateBook(int id, [FromBody] book book)
         {
             try
             {
-                Program.logger.Info(JsonConvert.SerializeObject(book));
+                Program.logger.Info(Request.ToString());
+
                 using (BookStoreEntities1 entities1 = new BookStoreEntities1())
                 {
                     var entity = entities1.books.FirstOrDefault(e => e.book_id == id);
@@ -125,16 +129,17 @@ namespace BookStoreAPI.Controllers
             }
         }
 
-        
-        
-        
+
+
+
         [HttpGet]
-        [Route("api/books/{id}")]
+        [Route("books/{id}")]
         public HttpResponseMessage GetBookByID(int id)
         {
             try
             {
-                Program.logger.Info(JsonConvert.SerializeObject(id));
+
+                Program.logger.Info(Request);
                 using (BookStoreEntities1 entities1 = new BookStoreEntities1())
                 {
                     var entity = entities1.books.FirstOrDefault(e => e.book_id == id);
@@ -153,24 +158,27 @@ namespace BookStoreAPI.Controllers
             catch (Exception ex)
             {
                 Program.logger.Error(ex.Message);
+                Program.logger.Error(JsonConvert.SerializeObject(ex));
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
             }
         }
 
-        
-        
-        
+
+
+
         [HttpGet]
-        [Route("api/booksbyauthor/{authorId}/books")]
+        [Route("booksbyauthor/{authorId}/books")]
         public HttpResponseMessage GetBooksByAuthor(int authorId)
         {
             try
             {
+                Program.logger.Info(Request.ToString());
+
                 using (BookStoreEntities1 entities1 = new BookStoreEntities1())
                 {
                     List<book> books = new List<book>();
 
-                    books = entities1.books.Where(b => b.authors.Any(a => a.author_id.Equals(authorId))).ToList();    
+                    books = entities1.books.Where(b => b.authors.Any(a => a.author_id.Equals(authorId))).ToList();
 
                     if (books != null && books.Count != 0)
                     {
@@ -192,15 +200,17 @@ namespace BookStoreAPI.Controllers
         }
 
 
-        
-        
-        
+
+
+
         [HttpGet]
-        [Route("api/booksbygenre/{genreId}/books")]
+        [Route("booksbygenre/{genreId}/books")]
         public HttpResponseMessage GetBooksByGenre(int genreId)
         {
             try
             {
+                Program.logger.Info(Request.ToString());
+
                 using (BookStoreEntities1 entities1 = new BookStoreEntities1())
                 {
                     List<book> books = new List<book>();
@@ -227,15 +237,17 @@ namespace BookStoreAPI.Controllers
         }
 
 
-        
-        
-        
+
+
+
         [HttpGet]
-        [Route("api/booksbypublisher/{publisherId}/books")]
+        [Route("booksbypublisher/{publisherId}/books")]
         public HttpResponseMessage GetBooksByPublisher(int publisherId)
         {
             try
             {
+                Program.logger.Info(Request.ToString());
+
                 using (BookStoreEntities1 entities1 = new BookStoreEntities1())
                 {
                     List<book> books = new List<book>();
@@ -252,28 +264,30 @@ namespace BookStoreAPI.Controllers
                     }
                 }
             }
-            
-            catch(Exception ex)
+
+            catch (Exception ex)
             {
                 Program.logger.Error(ex.Message);
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
             }
         }
 
-        
-        
-        
+
+
+
         [HttpGet]
-        [Route("api/latestbooksbygenre/{genreId}/books/latest")]
+        [Route("latestbooksbygenre/{genreId}/books/latest")]
         public HttpResponseMessage GetLatestBooksByGenre(int genreId)
         {
             try
             {
+                Program.logger.Info(Request.ToString());
+
                 using (BookStoreEntities1 entities1 = new BookStoreEntities1())
                 {
                     List<book> books = new List<book>();
 
-                    books = entities1.books.Where(b => b.genres.Any(a => a.genre_id.Equals(genreId))).OrderByDescending(b=>b.published_date).Take(10).ToList();
+                    books = entities1.books.Where(b => b.genres.Any(a => a.genre_id.Equals(genreId))).OrderByDescending(b => b.published_date).Take(10).ToList();
 
                     if (books != null && books.Count != 0)
                     {
@@ -295,11 +309,11 @@ namespace BookStoreAPI.Controllers
         }
 
 
-        
-        
-        
+
+
+
         [HttpPut]
-        [Route("api/rateabook/rate/{Id}")]
+        [Route("rateabook/rate/{Id}")]
         public HttpResponseMessage RateBookById(int id, [FromBody] book book)
         {
             try
@@ -315,8 +329,8 @@ namespace BookStoreAPI.Controllers
                     }
 
                     else
-                    {                        
-                        entity.rating = book.rating;                        
+                    {
+                        entity.rating = book.rating;
                         entities1.SaveChanges();
                         return Request.CreateResponse(HttpStatusCode.OK, entity);
                     }
@@ -332,14 +346,16 @@ namespace BookStoreAPI.Controllers
 
 
 
-        
-        
+
+
         [HttpGet]
-        [Route("api/bookbyauthorgenre/{authorId}/{genreid}/books")]
+        [Route("bookbyauthorgenre/{authorId}/{genreid}/books")]
         public HttpResponseMessage GetBooksByAuthorAndGenre(int authorId, int genreid)
         {
             try
             {
+                Program.logger.Info(Request.ToString());
+
                 using (BookStoreEntities1 entities1 = new BookStoreEntities1())
                 {
                     List<book> books = new List<book>();
