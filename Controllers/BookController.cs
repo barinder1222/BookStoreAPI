@@ -33,6 +33,13 @@ namespace BookStoreAPI.Controllers
         {
             try
             {
+                string token = Request.Headers.Contains("token") ? Request.Headers.GetValues("token").FirstOrDefault() : "";
+
+                if (!TokenManager.ValidateToken(token))
+                {
+                    throw new Exception("Invalid user");
+                }
+
                 Program.logger.Info(Request);
                 using (BookStoreEntities1 entities1 = new BookStoreEntities1())
                 {
@@ -96,6 +103,13 @@ namespace BookStoreAPI.Controllers
         {
             try
             {
+                string token = Request.Headers.GetValues("token").First();
+
+                if (!TokenManager.ValidateToken(token))
+                {
+                    throw new Exception("Invalid user");
+                }
+
                 Program.logger.Info(Request.ToString());
 
                 using (BookStoreEntities1 entities1 = new BookStoreEntities1())
