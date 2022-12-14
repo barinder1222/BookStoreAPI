@@ -11,7 +11,8 @@ namespace BookStoreAPI.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class book
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,7 +21,7 @@ namespace BookStoreAPI.Models
             this.authors = new HashSet<author>();
             this.genres = new HashSet<genre>();
         }
-    
+
         public int? book_id { get; set; }
         public string title { get; set; }
         public Nullable<int> total_pages { get; set; }
@@ -28,7 +29,7 @@ namespace BookStoreAPI.Models
         public string isbn { get; set; }
         public Nullable<System.DateTime> published_date { get; set; }
         public Nullable<int> publisher_id { get; set; }
-    
+
         public virtual publisher publisher { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<author> authors { get; set; }
