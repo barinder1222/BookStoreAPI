@@ -11,7 +11,7 @@ namespace BookStoreAPI.Controllers
     public class BookV2Controller : ApiController
     {
         [HttpGet]
-        [Route("api/V2/latestbooksbygenre/{genreId}/books/latest")]
+        [Route("latestbooksbygenre/V2/{genreId}/books/latest")]
         public HttpResponseMessage GetLatestBooksByGenre(int genreId)
         {
             try

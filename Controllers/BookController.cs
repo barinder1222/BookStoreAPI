@@ -12,19 +12,19 @@ namespace BookStoreAPI.Controllers
 {
     public class BookController : ApiController
     {
-        BookStoreEntities1 bookStore;
+        private BookStoreEntities1 bookStore;
         public BookController()
         {
             bookStore = new BookStoreEntities1();
         }
+        
+        
         [HttpGet]
         [Route("book/getallbooks")]
         public IEnumerable<book> GetAllBooks()
         {
             Program.logger.Info(Request.ToString());
-
             return bookStore.books.ToList();
-
         }
 
 
@@ -35,29 +35,22 @@ namespace BookStoreAPI.Controllers
         {
             try
             {
+                Program.logger.Info(Request.ToString());
                 string token = Request.Headers.Contains("token") ? Request.Headers.GetValues("token").FirstOrDefault() : "";
-
                 if (!TokenManager.ValidateToken(token))
                 {
-                    throw new Exception("Invalid user");
-                }
-
-                Program.logger.Info(Request);
+                    throw new Exception("User not Authorized");
+                }              
 
                 bookStore.books.Add(book);
                 bookStore.SaveChanges();
-                var message = Request.CreateResponse(HttpStatusCode.Created, book);
-                message.Headers.Location = new Uri(Request.RequestUri + book.book_id.ToString());
-                return message;
-
+                return Request.CreateResponse(HttpStatusCode.Created, book);                
             }
 
             catch (Exception ex)
             {
-                Program.logger.Error(ex.Message);
-                Program.logger.Error(ex.InnerException);
-
-                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
+                Program.logger.Error(ex.ToString());
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.ToString());
             }
         }
 
@@ -70,28 +63,32 @@ namespace BookStoreAPI.Controllers
         {
             try
             {
-                Program.logger.Info(JsonConvert.SerializeObject(id));
+                Program.logger.Info(Request.ToString());
+                string token = Request.Headers.Contains("token") ? Request.Headers.GetValues("token").FirstOrDefault() : "";
+                if (!TokenManager.ValidateToken(token))
                 {
-                    var entity = bookStore.books.FirstOrDefault(e => e.book_id == id);
-                    if (entity == null)
-                    {
-                        return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Book Id " + id.ToString() + " not found");
-                    }
-
-                    else
-                    {
-                        bookStore.books.Remove(entity);
-                        bookStore.SaveChanges();
-                        return Request.CreateResponse(HttpStatusCode.OK);
-                    }
-
+                    throw new Exception("User not Authorized");
                 }
+
+                var entity = bookStore.books.FirstOrDefault(e => e.book_id == id);
+                if (entity == null)
+                {
+                    return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Book Id " + id.ToString() + " not found");
+                }
+
+                else
+                {
+                    bookStore.books.Remove(entity);
+                    bookStore.SaveChanges();
+                    return Request.CreateResponse(HttpStatusCode.OK);
+                }
+
             }
 
             catch (Exception ex)
             {
-                Program.logger.Error(ex.Message);
-                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
+                Program.logger.Error(ex.ToString());
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.ToString());
             }
         }
 
@@ -104,41 +101,37 @@ namespace BookStoreAPI.Controllers
         {
             try
             {
-                string token = Request.Headers.GetValues("token").First();
-
+                Program.logger.Info(Request.ToString());
+                string token = Request.Headers.Contains("token") ? Request.Headers.GetValues("token").FirstOrDefault() : "";
                 if (!TokenManager.ValidateToken(token))
                 {
-                    throw new Exception("Invalid user");
+                    throw new Exception("User not Authorized");
                 }
 
-                Program.logger.Info(Request.ToString());
-
-
-                var entity = bookStore.books.FirstOrDefault(e => e.book_id == id);
-
-                if (entity == null)
+                var entitybook = bookStore.books.FirstOrDefault(e => e.book_id == id);
+                if (entitybook == null)
                 {
                     return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Book Id " + id.ToString() + " not found");
                 }
 
                 else
                 {
-                    entity.title = book.title;
-                    entity.total_pages = book.total_pages;
-                    entity.rating = book.rating;
-                    entity.isbn = book.isbn;
-                    entity.published_date = book.published_date;
-                    entity.publisher_id = book.publisher_id;
+                    entitybook.title = book.title;
+                    entitybook.total_pages = book.total_pages;
+                    entitybook.rating = book.rating;
+                    entitybook.isbn = book.isbn;
+                    entitybook.published_date = book.published_date;
+                    entitybook.publisher_id = book.publisher_id;
 
                     bookStore.SaveChanges();
-                    return Request.CreateResponse(HttpStatusCode.OK, entity);
+                    return Request.CreateResponse(HttpStatusCode.OK, entitybook);
                 }
             }
 
             catch (Exception ex)
             {
-                Program.logger.Error(ex.Message);
-                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
+                Program.logger.Error(ex.ToString());
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.ToString());
             }
         }
 
@@ -151,8 +144,7 @@ namespace BookStoreAPI.Controllers
         {
             try
             {
-
-                Program.logger.Info(Request);
+                Program.logger.Info(Request.ToString());
                 var entity = bookStore.books.FirstOrDefault(e => e.book_id == id);
                 if (entity != null)
                 {
@@ -167,9 +159,8 @@ namespace BookStoreAPI.Controllers
 
             catch (Exception ex)
             {
-                Program.logger.Error(ex.Message);
-                Program.logger.Error(JsonConvert.SerializeObject(ex));
-                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
+                Program.logger.Error(ex.ToString());
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.ToString());
             }
         }
 
@@ -182,10 +173,8 @@ namespace BookStoreAPI.Controllers
         {
             try
             {
-                Program.logger.Info(Request.ToString());
-
+                Program.logger.Info(Request.ToString());                
                 List<book> books = new List<book>();
-
                 books = bookStore.books.Where(b => b.authors.Any(a => a.author_id.Equals(authorId))).ToList();
 
                 if (books != null && books.Count != 0)
@@ -201,8 +190,8 @@ namespace BookStoreAPI.Controllers
 
             catch (Exception ex)
             {
-                Program.logger.Error(ex.Message);
-                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
+                Program.logger.Error(ex.ToString());
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.ToString());
             }
         }
 
@@ -216,10 +205,8 @@ namespace BookStoreAPI.Controllers
         {
             try
             {
-                Program.logger.Info(Request.ToString());
-
+                Program.logger.Info(Request.ToString());                
                 List<book> books = new List<book>();
-
                 books = bookStore.books.Where(b => b.genres.Any(a => a.genre_id.Equals(genreId))).ToList();
 
                 if (books != null && books.Count != 0)
@@ -236,8 +223,8 @@ namespace BookStoreAPI.Controllers
 
             catch (Exception ex)
             {
-                Program.logger.Error(ex.Message);
-                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
+                Program.logger.Error(ex.ToString());
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.ToString());
             }
         }
 
@@ -252,7 +239,6 @@ namespace BookStoreAPI.Controllers
             try
             {
                 Program.logger.Info(Request.ToString());
-
                 List<book> books = new List<book>();
                 books = bookStore.books.Where(e => e.publisher_id == publisherId).ToList();
 
@@ -268,8 +254,8 @@ namespace BookStoreAPI.Controllers
             }
             catch (Exception ex)
             {
-                Program.logger.Error(ex.Message);
-                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
+                Program.logger.Error(ex.ToString());
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.ToString());
             }
         }
 
@@ -283,9 +269,7 @@ namespace BookStoreAPI.Controllers
             try
             {
                 Program.logger.Info(Request.ToString());
-
                 List<book> books = new List<book>();
-
                 books = bookStore.books.Where(b => b.genres.Any(a => a.genre_id.Equals(genreId))).OrderByDescending(b => b.published_date).Take(10).ToList();
 
                 if (books != null && books.Count != 0)
@@ -301,8 +285,8 @@ namespace BookStoreAPI.Controllers
 
             catch (Exception ex)
             {
-                Program.logger.Error(ex.Message);
-                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
+                Program.logger.Error(ex.ToString());
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.ToString());
             }
         }
 
@@ -315,8 +299,13 @@ namespace BookStoreAPI.Controllers
         public HttpResponseMessage RateBookById(int id, [FromBody] book book)
         {
             try
-            {
-                Program.logger.Info(JsonConvert.SerializeObject(book));
+            {                
+                Program.logger.Info(Request.ToString());
+                string token = Request.Headers.Contains("token") ? Request.Headers.GetValues("token").FirstOrDefault() : "";
+                if (!TokenManager.ValidateToken(token))
+                {
+                    throw new Exception("User not Authorized");
+                }
                 var entity = bookStore.books.FirstOrDefault(e => e.book_id == id);
 
                 if (entity == null)
@@ -334,8 +323,8 @@ namespace BookStoreAPI.Controllers
 
             catch (Exception ex)
             {
-                Program.logger.Error(ex.Message);
-                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
+                Program.logger.Error(ex.ToString());
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.ToString());
             }
         }
 
@@ -350,7 +339,6 @@ namespace BookStoreAPI.Controllers
             try
             {
                 Program.logger.Info(Request.ToString());
-
                 List<book> books = new List<book>();
                 books = bookStore.books.Where(b => b.authors.Any(a => a.author_id.Equals(authorId)) && b.genres.Any(g => g.genre_id.Equals(genreid))).ToList();
 
@@ -367,8 +355,8 @@ namespace BookStoreAPI.Controllers
 
             catch (Exception ex)
             {
-                Program.logger.Error(ex.Message);
-                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
+                Program.logger.Error(ex.ToString());
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.ToString());
             }
         }
     }

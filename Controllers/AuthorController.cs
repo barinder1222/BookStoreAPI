@@ -1,4 +1,5 @@
-﻿using BookStoreAPI.Models;
+﻿using BookStoreAPI.Helper;
+using BookStoreAPI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,48 +11,36 @@ namespace BookStoreAPI.Controllers
 {
     public class AuthorController : ApiController
     {
-        [HttpGet]        
-        public IEnumerable<author> GetAllBooks()
+        private BookStoreEntities1 bookStore;
+        public AuthorController()
         {
-            using (BookStoreEntities1 entities1 = new BookStoreEntities1())
-            {
-                return entities1.authors.ToList();
-            }
-
+            bookStore = new BookStoreEntities1();
         }
 
+
         [HttpGet]
-        public HttpResponseMessage GetAuthorByID(int id)
-        {
-            using (BookStoreEntities1 entities1 = new BookStoreEntities1())
-            {
-                var entity = entities1.authors.FirstOrDefault(e => e.author_id == id);
-                if (entity != null)
-                {
-                    return Request.CreateResponse(HttpStatusCode.OK, entity);
-                }
-
-                else
-                {
-                    return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Author Id " + id.ToString() + " not found");
-                }
-            }
-
+        [Route("author/getallauthors")]
+        public IEnumerable<author> GetAllAuthors()
+        { 
+            Program.logger.Info(Request.ToString());
+            return bookStore.authors.ToList(); 
         }
 
         [HttpPost]
+        [Route("author/addauthor")]
         public HttpResponseMessage AddAuthor([FromBody]author author)
         {
             try
             {
-                using (BookStoreEntities1 entities1 = new BookStoreEntities1())
+                Program.logger.Info(Request.ToString());
+                string token = Request.Headers.Contains("token") ? Request.Headers.GetValues("token").FirstOrDefault() : "";
+                if (!TokenManager.ValidateToken(token))
                 {
-                    entities1.authors.Add(author);
-                    entities1.SaveChanges();
-                    var message = Request.CreateResponse(HttpStatusCode.Created, author);
-                    message.Headers.Location = new Uri(Request.RequestUri + author.author_id.ToString());
-                    return message;
+                    throw new Exception("User not Authorized");
                 }
+                bookStore.authors.Add(author);
+                bookStore.SaveChanges();
+                return Request.CreateResponse(HttpStatusCode.Created, author);
             }
 
             catch (Exception ex)
@@ -61,24 +50,28 @@ namespace BookStoreAPI.Controllers
         }
 
         [HttpDelete]
+        [Route("author/deleteauthor/{id}")]
         public HttpResponseMessage DeleteAuthor(int id)
         {
             try
             {
-                using (BookStoreEntities1 entities1 = new BookStoreEntities1())
+                Program.logger.Info(Request.ToString());
+                string token = Request.Headers.Contains("token") ? Request.Headers.GetValues("token").FirstOrDefault() : "";
+                if (!TokenManager.ValidateToken(token))
                 {
-                    var entity = entities1.authors.FirstOrDefault(e => e.author_id == id);
-                    if (entity == null)
-                    {
-                        return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Author Id " + id.ToString() + " not found");
-                    }
+                    throw new Exception("User not Authorized");
+                }
+                var entity = bookStore.authors.FirstOrDefault(e => e.author_id == id);
+                if (entity == null)
+                {
+                    return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Author Id " + id.ToString() + " not found");
+                }
 
-                    else
-                    {
-                        entities1.authors.Remove(entity);
-                        entities1.SaveChanges();
-                        return Request.CreateResponse(HttpStatusCode.OK);
-                    }
+                else
+                {
+                    bookStore.authors.Remove(entity);
+                    bookStore.SaveChanges();
+                    return Request.CreateResponse(HttpStatusCode.OK);
                 }
             }
 
@@ -90,28 +83,30 @@ namespace BookStoreAPI.Controllers
 
 
         [HttpPut]
+        [Route("author/updateauthor/{id}")]
         public HttpResponseMessage UpdateAuthor(int id, [FromBody] author author)
         {
             try
             {
-                using (BookStoreEntities1 entities1 = new BookStoreEntities1())
+                Program.logger.Info(Request.ToString());
+                string token = Request.Headers.Contains("token") ? Request.Headers.GetValues("token").FirstOrDefault() : "";
+                if (!TokenManager.ValidateToken(token))
                 {
-                    var entity = entities1.authors.FirstOrDefault(e => e.author_id == id);
+                    throw new Exception("User not Authorized");
+                }
+                var entityauthor = bookStore.authors.FirstOrDefault(e => e.author_id == id);
+                if (entityauthor == null)
+                {
+                    return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Author Id " + id.ToString() + " not found");
+                }
 
-                    if (entity == null)
-                    {
-                        return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Author Id " + id.ToString() + " not found");
-                    }
-
-                    else
-                    {
-                        entity.first_name = author.first_name;
-                        entity.middle_name = author.middle_name;
-                        entity.last_name = author.last_name;
-
-                        entities1.SaveChanges();
-                        return Request.CreateResponse(HttpStatusCode.OK, entity);
-                    }
+                else
+                {
+                    entityauthor.first_name = author.first_name;
+                    entityauthor.middle_name = author.middle_name;
+                    entityauthor.last_name = author.last_name;
+                    bookStore.SaveChanges();
+                    return Request.CreateResponse(HttpStatusCode.OK, entityauthor);
                 }
             }
 
