@@ -36,6 +36,8 @@ namespace BookStoreAPI.Controllers
             }
             catch (Exception ex)
             {
+                Program.logger.Error(ex.ToString());
+
                 return new CustomResponse()
                 {
                     Status = "Invalid",

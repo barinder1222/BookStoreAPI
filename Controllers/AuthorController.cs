@@ -77,6 +77,8 @@ namespace BookStoreAPI.Controllers
 
             catch (Exception ex)
             {
+                Program.logger.Error(ex.ToString());
+
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
             }
         }
@@ -112,6 +114,8 @@ namespace BookStoreAPI.Controllers
 
             catch (Exception ex)
             {
+                Program.logger.Error(ex.ToString());
+
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
             }
         }
