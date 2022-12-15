@@ -22,7 +22,7 @@ namespace BookStoreAPI.Controllers
         [Route("author/getallauthors")]
         public IEnumerable<author> GetAllAuthors()
         { 
-            Program.logger.Info(Request.ToString());
+            NLogger.logger.Info(Request.ToString());
             return bookStore.authors.ToList(); 
         }
 
@@ -32,7 +32,7 @@ namespace BookStoreAPI.Controllers
         {
             try
             {
-                Program.logger.Info(Request.ToString());
+                NLogger.logger.Info(Request.ToString());
                 string token = Request.Headers.Contains("token") ? Request.Headers.GetValues("token").FirstOrDefault() : "";
                 if (!TokenManager.ValidateToken(token))
                 {
@@ -55,7 +55,7 @@ namespace BookStoreAPI.Controllers
         {
             try
             {
-                Program.logger.Info(Request.ToString());
+                NLogger.logger.Info(Request.ToString());
                 string token = Request.Headers.Contains("token") ? Request.Headers.GetValues("token").FirstOrDefault() : "";
                 if (!TokenManager.ValidateToken(token))
                 {
@@ -77,7 +77,7 @@ namespace BookStoreAPI.Controllers
 
             catch (Exception ex)
             {
-                Program.logger.Error(ex.ToString());
+                NLogger.logger.Error(ex.ToString());
 
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
             }
@@ -90,7 +90,8 @@ namespace BookStoreAPI.Controllers
         {
             try
             {
-                Program.logger.Info(Request.ToString());
+                
+                NLogger.logger.Info(Request.ToString());
                 string token = Request.Headers.Contains("token") ? Request.Headers.GetValues("token").FirstOrDefault() : "";
                 if (!TokenManager.ValidateToken(token))
                 {
@@ -114,7 +115,7 @@ namespace BookStoreAPI.Controllers
 
             catch (Exception ex)
             {
-                Program.logger.Error(ex.ToString());
+                NLogger.logger.Error(ex.ToString());
 
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
             }

@@ -258,7 +258,7 @@
     <Compile Include="Models\publisher.cs">
       <DependentUpon>BookStore.tt</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="NLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\LoginVM.cs" />
   </ItemGroup>

@@ -6,7 +6,7 @@ using System.Web;
 
 namespace BookStoreAPI
 {
-    public class Program
+    public class NLogger
     {
         public static Logger logger = LogManager.GetCurrentClassLogger();
     }

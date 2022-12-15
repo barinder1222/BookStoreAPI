@@ -23,7 +23,7 @@ namespace BookStoreAPI.Controllers
         [Route("book/getallbooks")]
         public IEnumerable<book> GetAllBooks()
         {
-            Program.logger.Info(Request.ToString());
+            NLogger.logger.Info(Request.ToString());
             return bookStore.books.ToList();
         }
 
@@ -35,7 +35,7 @@ namespace BookStoreAPI.Controllers
         {
             try
             {
-                Program.logger.Info(Request.ToString());
+                NLogger.logger.Info(Request.ToString());
                 string token = Request.Headers.Contains("token") ? Request.Headers.GetValues("token").FirstOrDefault() : "";
                 if (!TokenManager.ValidateToken(token))
                 {
@@ -49,7 +49,7 @@ namespace BookStoreAPI.Controllers
 
             catch (Exception ex)
             {
-                Program.logger.Error(ex.ToString());
+                NLogger.logger.Error(ex.ToString());
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.ToString());
             }
         }
@@ -63,7 +63,7 @@ namespace BookStoreAPI.Controllers
         {
             try
             {
-                Program.logger.Info(Request.ToString());
+                NLogger.logger.Info(Request.ToString());
                 string token = Request.Headers.Contains("token") ? Request.Headers.GetValues("token").FirstOrDefault() : "";
                 if (!TokenManager.ValidateToken(token))
                 {
@@ -87,7 +87,7 @@ namespace BookStoreAPI.Controllers
 
             catch (Exception ex)
             {
-                Program.logger.Error(ex.ToString());
+                NLogger.logger.Error(ex.ToString());
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.ToString());
             }
         }
@@ -101,7 +101,7 @@ namespace BookStoreAPI.Controllers
         {
             try
             {
-                Program.logger.Info(Request.ToString());
+                NLogger.logger.Info(Request.ToString());
                 string token = Request.Headers.Contains("token") ? Request.Headers.GetValues("token").FirstOrDefault() : "";
                 if (!TokenManager.ValidateToken(token))
                 {
@@ -130,7 +130,7 @@ namespace BookStoreAPI.Controllers
 
             catch (Exception ex)
             {
-                Program.logger.Error(ex.ToString());
+                NLogger.logger.Error(ex.ToString());
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.ToString());
             }
         }
@@ -144,7 +144,7 @@ namespace BookStoreAPI.Controllers
         {
             try
             {
-                Program.logger.Info(Request.ToString());
+                NLogger.logger.Info(Request.ToString());
                 var entity = bookStore.books.FirstOrDefault(e => e.book_id == id);
                 if (entity != null)
                 {
@@ -159,7 +159,7 @@ namespace BookStoreAPI.Controllers
 
             catch (Exception ex)
             {
-                Program.logger.Error(ex.ToString());
+                NLogger.logger.Error(ex.ToString());
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.ToString());
             }
         }
@@ -173,7 +173,7 @@ namespace BookStoreAPI.Controllers
         {
             try
             {
-                Program.logger.Info(Request.ToString());                
+                NLogger.logger.Info(Request.ToString());                
                 List<book> books = new List<book>();
                 books = bookStore.books.Where(b => b.authors.Any(a => a.author_id.Equals(authorId))).ToList();
 
@@ -190,7 +190,7 @@ namespace BookStoreAPI.Controllers
 
             catch (Exception ex)
             {
-                Program.logger.Error(ex.ToString());
+                NLogger.logger.Error(ex.ToString());
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.ToString());
             }
         }
@@ -205,7 +205,7 @@ namespace BookStoreAPI.Controllers
         {
             try
             {
-                Program.logger.Info(Request.ToString());                
+                NLogger.logger.Info(Request.ToString());                
                 List<book> books = new List<book>();
                 books = bookStore.books.Where(b => b.genres.Any(a => a.genre_id.Equals(genreId))).ToList();
 
@@ -223,7 +223,7 @@ namespace BookStoreAPI.Controllers
 
             catch (Exception ex)
             {
-                Program.logger.Error(ex.ToString());
+                NLogger.logger.Error(ex.ToString());
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.ToString());
             }
         }
@@ -238,7 +238,7 @@ namespace BookStoreAPI.Controllers
         {
             try
             {
-                Program.logger.Info(Request.ToString());
+                NLogger.logger.Info(Request.ToString());
                 List<book> books = new List<book>();
                 books = bookStore.books.Where(e => e.publisher_id == publisherId).ToList();
 
@@ -254,7 +254,7 @@ namespace BookStoreAPI.Controllers
             }
             catch (Exception ex)
             {
-                Program.logger.Error(ex.ToString());
+                NLogger.logger.Error(ex.ToString());
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.ToString());
             }
         }
@@ -268,7 +268,7 @@ namespace BookStoreAPI.Controllers
         {
             try
             {
-                Program.logger.Info(Request.ToString());
+                NLogger.logger.Info(Request.ToString());
                 List<book> books = new List<book>();
                 books = bookStore.books.Where(b => b.genres.Any(a => a.genre_id.Equals(genreId))).OrderByDescending(b => b.published_date).Take(10).ToList();
 
@@ -285,7 +285,7 @@ namespace BookStoreAPI.Controllers
 
             catch (Exception ex)
             {
-                Program.logger.Error(ex.ToString());
+                NLogger.logger.Error(ex.ToString());
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.ToString());
             }
         }
@@ -300,7 +300,7 @@ namespace BookStoreAPI.Controllers
         {
             try
             {                
-                Program.logger.Info(Request.ToString());
+                NLogger.logger.Info(Request.ToString());
                 string token = Request.Headers.Contains("token") ? Request.Headers.GetValues("token").FirstOrDefault() : "";
                 if (!TokenManager.ValidateToken(token))
                 {
@@ -323,7 +323,7 @@ namespace BookStoreAPI.Controllers
 
             catch (Exception ex)
             {
-                Program.logger.Error(ex.ToString());
+                NLogger.logger.Error(ex.ToString());
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.ToString());
             }
         }
@@ -338,7 +338,7 @@ namespace BookStoreAPI.Controllers
         {
             try
             {
-                Program.logger.Info(Request.ToString());
+                NLogger.logger.Info(Request.ToString());
                 List<book> books = new List<book>();
                 books = bookStore.books.Where(b => b.authors.Any(a => a.author_id.Equals(authorId)) && b.genres.Any(g => g.genre_id.Equals(genreid))).ToList();
 
@@ -355,7 +355,7 @@ namespace BookStoreAPI.Controllers
 
             catch (Exception ex)
             {
-                Program.logger.Error(ex.ToString());
+                NLogger.logger.Error(ex.ToString());
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.ToString());
             }
         }
