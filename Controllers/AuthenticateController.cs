@@ -9,7 +9,7 @@ using System.Web.Http;
 
 namespace BookStoreAPI.Controllers
 {
-    public class AuthorizeController : ApiController
+    public class AuthenticateController : ApiController
     {
         [Route("Users/Authenticate")]
         [HttpPost]
