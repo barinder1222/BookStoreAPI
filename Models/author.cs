@@ -11,7 +11,8 @@ namespace BookStoreAPI.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Text.Json.Serialization;
+
     public partial class author
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,13 +20,14 @@ namespace BookStoreAPI.Models
         {
             this.books = new HashSet<book>();
         }
-    
+
         public int author_id { get; set; }
 
         public string first_name { get; set; }
         public string middle_name { get; set; }
         public string last_name { get; set; }
-    
+        [JsonIgnore]
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<book> books { get; set; }
     }

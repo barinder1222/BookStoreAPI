@@ -9,6 +9,7 @@
 
 namespace BookStoreAPI.Models
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -29,10 +30,14 @@ namespace BookStoreAPI.Models
         public string isbn { get; set; }
         public Nullable<System.DateTime> published_date { get; set; }
         public Nullable<int> publisher_id { get; set; }
-
+        [JsonIgnore]
         public virtual publisher publisher { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [JsonIgnore]
+
         public virtual ICollection<author> authors { get; set; }
+        [JsonIgnore]
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<genre> genres { get; set; }
     }
