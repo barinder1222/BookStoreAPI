@@ -70,15 +70,15 @@ namespace BookStoreAPI.Controllers
                     throw new Exception("User not Authorized");
                 }
 
-                var entity = bookStore.books.FirstOrDefault(e => e.book_id == id);
-                if (entity == null)
+                var entitybook = bookStore.books.FirstOrDefault(e => e.book_id == id);
+                if (entitybook == null)
                 {
                     return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Book Id " + id.ToString() + " not found");
                 }
 
                 else
                 {
-                    bookStore.books.Remove(entity);
+                    bookStore.books.Remove(entitybook);
                     bookStore.SaveChanges();
                     return Request.CreateResponse(HttpStatusCode.OK);
                 }
@@ -145,10 +145,10 @@ namespace BookStoreAPI.Controllers
             try
             {
                 NLogger.logger.Info(Request.ToString());
-                var entity = bookStore.books.FirstOrDefault(e => e.book_id == id);
-                if (entity != null)
+                var entitybook = bookStore.books.FirstOrDefault(e => e.book_id == id);
+                if (entitybook != null)
                 {
-                    return Request.CreateResponse(HttpStatusCode.OK, entity);
+                    return Request.CreateResponse(HttpStatusCode.OK, entitybook);
                 }
 
                 else
@@ -306,18 +306,18 @@ namespace BookStoreAPI.Controllers
                 {
                     throw new Exception("User not Authorized");
                 }
-                var entity = bookStore.books.FirstOrDefault(e => e.book_id == id);
+                var entitybook = bookStore.books.FirstOrDefault(e => e.book_id == id);
 
-                if (entity == null)
+                if (entitybook == null)
                 {
                     return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Book Id " + id.ToString() + " not found");
                 }
 
                 else
                 {
-                    entity.rating = book.rating;
+                    entitybook.rating = book.rating;
                     bookStore.SaveChanges();
-                    return Request.CreateResponse(HttpStatusCode.OK, entity);
+                    return Request.CreateResponse(HttpStatusCode.OK, entitybook);
                 }
             }
 

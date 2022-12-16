@@ -234,6 +234,7 @@
     <Compile Include="Models\author.cs">
       <DependentUpon>BookStore.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\AuthorViewModel.cs" />
     <Compile Include="Models\book.cs">
       <DependentUpon>BookStore.tt</DependentUpon>
     </Compile>

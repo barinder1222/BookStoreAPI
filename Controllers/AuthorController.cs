@@ -20,10 +20,10 @@ namespace BookStoreAPI.Controllers
 
         [HttpGet]
         [Route("author/getallauthors")]
-        public IEnumerable<author> GetAllAuthors()
+        public IEnumerable<AuthorViewModel> GetAllAuthors()
         { 
             NLogger.logger.Info(Request.ToString());
-            return bookStore.authors.ToList(); 
+            return bookStore.authors.Select(a => new AuthorViewModel() { author_id = a.author_id, first_name = a.first_name, middle_name = a.middle_name, last_name = a.last_name }).ToList();
         }
 
         [HttpPost]
@@ -61,15 +61,15 @@ namespace BookStoreAPI.Controllers
                 {
                     throw new Exception("User not Authorized");
                 }
-                var entity = bookStore.authors.FirstOrDefault(e => e.author_id == id);
-                if (entity == null)
+                var entityauthor = bookStore.authors.FirstOrDefault(e => e.author_id == id);
+                if (entityauthor == null)
                 {
                     return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Author Id " + id.ToString() + " not found");
                 }
 
                 else
                 {
-                    bookStore.authors.Remove(entity);
+                    bookStore.authors.Remove(entityauthor);
                     bookStore.SaveChanges();
                     return Request.CreateResponse(HttpStatusCode.OK);
                 }

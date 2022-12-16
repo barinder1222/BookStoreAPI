@@ -16,11 +16,11 @@ namespace BookStoreAPI.Controllers
         {
             try
             {
-                using (BookStoreEntities1 entities1 = new BookStoreEntities1())
+                using (BookStoreEntities1 bookStore = new BookStoreEntities1())
                 {
                     List<book> books = new List<book>();
 
-                    books = entities1.books.Where(b => b.genres.Any(a => a.genre_id.Equals(genreId))).OrderByDescending(b => b.published_date).Take(20).ToList();
+                    books = bookStore.books.Where(b => b.genres.Any(a => a.genre_id.Equals(genreId))).OrderByDescending(b => b.published_date).Take(20).ToList();
 
                     if (books != null && books.Count != 0)
                     {
