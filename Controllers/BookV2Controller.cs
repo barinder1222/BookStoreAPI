@@ -36,8 +36,8 @@ namespace BookStoreAPI.Controllers
 
             catch (Exception ex)
             {
-                NLogger.logger.Error(ex.Message);
-                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
+                NLogger.logger.Error(ex.ToString());
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.ToString());
             }
         }
     }
