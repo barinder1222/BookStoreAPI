@@ -1,0 +1,4463 @@
+{
+	"info": {
+		"_postman_id": "d2bfcb4f-ceb1-43ef-958f-a0d0248b00b9",
+		"name": "BookStoreAPI",
+		"description": "# Introduction\nWhat does your API do?\n\n# Overview\nThings that the developers should know about\n\n# Authentication\nWhat is the preferred way of using the API?\n\n# Error Codes\nWhat errors and status codes can a user expect?\n\n# Rate limit\nIs there a limit to the number of requests a user can send?",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16235741"
+	},
+	"item": [
+		{
+			"name": "latestbooksbygenre/V2/3/books/latest",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:44363/latestbooksbygenre/V2/3/books/latest",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44363",
+					"path": [
+						"latestbooksbygenre",
+						"V2",
+						"3",
+						"books",
+						"latest"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44363/latestbooksbygenre/V2/3/books/latest",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44363",
+							"path": [
+								"latestbooksbygenre",
+								"V2",
+								"3",
+								"books",
+								"latest"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "latestbooksbygenre/V2/3/books/latest",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://apibooksstore.azurewebsites.net/latestbooksbygenre/V2/3/books/latest",
+							"protocol": "https",
+							"host": [
+								"apibooksstore",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"latestbooksbygenre",
+								"V2",
+								"3",
+								"books",
+								"latest"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "907"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 16 Dec 2022 08:30:10 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"book_id\": 36,\n        \"title\": \"SQL 11\",\n        \"total_pages\": 233,\n        \"rating\": 4,\n        \"isbn\": \"2536-4526-147\",\n        \"published_date\": \"2022-05-07T00:00:00\",\n        \"publisher_id\": 2\n    },\n    {\n        \"book_id\": 4,\n        \"title\": \"C# Advance\",\n        \"total_pages\": 170,\n        \"rating\": 4,\n        \"isbn\": \"7860-2346-513\",\n        \"published_date\": \"2022-05-06T00:00:00\",\n        \"publisher_id\": 4\n    },\n    {\n        \"book_id\": 20,\n        \"title\": \"Concepts of MVC 2\",\n        \"total_pages\": 240,\n        \"rating\": 4,\n        \"isbn\": \"1131-2234-111\",\n        \"published_date\": \"2022-05-04T00:00:00\",\n        \"publisher_id\": 2\n    },\n    {\n        \"book_id\": 19,\n        \"title\": \"Introduction to Dot Net Core 7\",\n        \"total_pages\": 140,\n        \"rating\": 4,\n        \"isbn\": \"2131-6234-611\",\n        \"published_date\": \"2022-05-03T00:00:00\",\n        \"publisher_id\": 4\n    },\n    {\n        \"book_id\": 35,\n        \"title\": \"SQL 10\",\n        \"total_pages\": 123,\n        \"rating\": 3,\n        \"isbn\": \"5236-8561-254\",\n        \"published_date\": \"2022-04-07T00:00:00\",\n        \"publisher_id\": 1\n    },\n    {\n        \"book_id\": 21,\n        \"title\": \"Introduction to .Net Core\",\n        \"total_pages\": 250,\n        \"rating\": 3,\n        \"isbn\": \"3118-7234-761\",\n        \"published_date\": \"2022-03-07T00:00:00\",\n        \"publisher_id\": 1\n    },\n    {\n        \"book_id\": 1,\n        \"title\": \"Concepts of .Net Core\",\n        \"total_pages\": 250,\n        \"rating\": 4.5,\n        \"isbn\": \"3118-7234-761\",\n        \"published_date\": \"2022-03-07T00:00:00\",\n        \"publisher_id\": 1\n    },\n    {\n        \"book_id\": 12,\n        \"title\": \"Introduction to .Net Core\",\n        \"total_pages\": 250,\n        \"rating\": 4.5,\n        \"isbn\": \"3118-7234-761\",\n        \"published_date\": \"2022-03-07T00:00:00\",\n        \"publisher_id\": 1\n    },\n    {\n        \"book_id\": 2,\n        \"title\": \"Introduction to ASP.Net\",\n        \"total_pages\": 203,\n        \"rating\": 4,\n        \"isbn\": \"7516-2533-643\",\n        \"published_date\": \"2022-03-04T00:00:00\",\n        \"publisher_id\": 2\n    },\n    {\n        \"book_id\": 33,\n        \"title\": \"Concepts of SQL\",\n        \"total_pages\": 300,\n        \"rating\": 4.5,\n        \"isbn\": \"8523-7465-123\",\n        \"published_date\": \"2022-02-10T00:00:00\",\n        \"publisher_id\": 3\n    },\n    {\n        \"book_id\": 34,\n        \"title\": \"Concepts of PL SQL\",\n        \"total_pages\": 250,\n        \"rating\": 4,\n        \"isbn\": \"2794-1634-856\",\n        \"published_date\": \"2022-02-07T00:00:00\",\n        \"publisher_id\": 4\n    },\n    {\n        \"book_id\": 31,\n        \"title\": \"Core Vol 3\",\n        \"total_pages\": 142,\n        \"rating\": 3,\n        \"isbn\": \"7852-1463-856\",\n        \"published_date\": \"2022-02-05T00:00:00\",\n        \"publisher_id\": 1\n    },\n    {\n        \"book_id\": 23,\n        \"title\": \"Introduction to Dot Net Core 6\",\n        \"total_pages\": 130,\n        \"rating\": 4,\n        \"isbn\": \"2231-7234-651\",\n        \"published_date\": \"2022-02-03T00:00:00\",\n        \"publisher_id\": 3\n    },\n    {\n        \"book_id\": 29,\n        \"title\": \"C# Vol 3\",\n        \"total_pages\": 233,\n        \"rating\": 4,\n        \"isbn\": \"8523-7462-111\",\n        \"published_date\": \"2022-02-01T00:00:00\",\n        \"publisher_id\": 4\n    },\n    {\n        \"book_id\": 32,\n        \"title\": \"Concepts of Web API 3\",\n        \"total_pages\": 161,\n        \"rating\": 4,\n        \"isbn\": \"1325-8569-741\",\n        \"published_date\": \"2022-01-05T00:00:00\",\n        \"publisher_id\": 2\n    },\n    {\n        \"book_id\": 13,\n        \"title\": \"Introduction to ASP.Net 5\",\n        \"total_pages\": 200,\n        \"rating\": 5,\n        \"isbn\": \"2131-6234-601\",\n        \"published_date\": \"2022-01-03T00:00:00\",\n        \"publisher_id\": 2\n    },\n    {\n        \"book_id\": 18,\n        \"title\": \"Introduction to Dot Net Core 5\",\n        \"total_pages\": 200,\n        \"rating\": 5,\n        \"isbn\": \"2131-6234-601\",\n        \"published_date\": \"2022-01-03T00:00:00\",\n        \"publisher_id\": 2\n    },\n    {\n        \"book_id\": 3,\n        \"title\": \"Web API Concepts\",\n        \"total_pages\": 151,\n        \"rating\": 4.5,\n        \"isbn\": \"6290-1437-602\",\n        \"published_date\": \"2022-01-01T00:00:00\",\n        \"publisher_id\": 3\n    },\n    {\n        \"book_id\": 28,\n        \"title\": \"ASP Vol 3\",\n        \"total_pages\": 216,\n        \"rating\": 3,\n        \"isbn\": \"8563-4125-896\",\n        \"published_date\": \"2021-03-03T00:00:00\",\n        \"publisher_id\": 3\n    },\n    {\n        \"book_id\": 27,\n        \"title\": \"MVC Vol 3\",\n        \"total_pages\": 43,\n        \"rating\": 4,\n        \"isbn\": \"5874-1256-852\",\n        \"published_date\": \"2021-03-02T00:00:00\",\n        \"publisher_id\": 2\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "author/updateauthor/4",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:44363/author/updateauthor/7",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44363",
+					"path": [
+						"author",
+						"updateauthor",
+						"7"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://localhost:44363/author/updateauthor/7",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44363",
+							"path": [
+								"author",
+								"updateauthor",
+								"7"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "author/updateauthor/7",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWludXNlciIsIm5iZiI6MTY3MTE3OTQ5NCwiZXhwIjoxNjcxMTgxMjk0LCJpYXQiOjE2NzExNzk0OTR9.SmBTNTazMKDu2HnaWf9GXjeox6Ylo2aSh4-XkYPlpyY",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"first_name\": \"Mic\",\r\n        \"middle_name\": \"Alen\",\r\n        \"last_name\": \"Lee\"        \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44363/author/updateauthor/4",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44363",
+							"path": [
+								"author",
+								"updateauthor",
+								"4"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319"
+						},
+						{
+							"key": "X-SourceFiles",
+							"value": "=?UTF-8?B?QzpcVXNlcnNcYmFyaW5cc291cmNlXHJlcG9zXEJvb2tTdG9yZUFQSVxhdXRob3JcdXBkYXRlYXV0aG9yXDQ=?="
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 16 Dec 2022 08:33:37 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "304"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Message\": \"An error has occurred.\",\n    \"ExceptionMessage\": \"User not Authorized\",\n    \"ExceptionType\": \"System.Exception\",\n    \"StackTrace\": \"   at BookStoreAPI.Controllers.AuthorController.UpdateAuthor(Int32 id, author author) in C:\\\\Users\\\\barin\\\\source\\\\repos\\\\BookStoreAPI\\\\Controllers\\\\AuthorController.cs:line 98\"\n}"
+				}
+			]
+		},
+		{
+			"name": "author/updateauthor/4",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:44363/author/updateauthor/7",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44363",
+					"path": [
+						"author",
+						"updateauthor",
+						"7"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://localhost:44363/author/updateauthor/7",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44363",
+							"path": [
+								"author",
+								"updateauthor",
+								"7"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "author/updateauthor/7",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWludXNlciIsIm5iZiI6MTY3MTE3OTQ5NCwiZXhwIjoxNjcxMTgxMjk0LCJpYXQiOjE2NzExNzk0OTR9.SmBTNTazMKDu2HnaWf9GXjeox6Ylo2aSh4-XkYPlpyY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"first_name\": \"Mike\",\r\n        \"middle_name\": \"Alen\",\r\n        \"last_name\": \"Lee\"        \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://apibooksstore.azurewebsites.net/author/updateauthor/4",
+							"protocol": "https",
+							"host": [
+								"apibooksstore",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"author",
+								"updateauthor",
+								"4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "185"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 16 Dec 2022 08:35:07 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"author_id\": 4,\n    \"first_name\": \"Mike\",\n    \"middle_name\": \"Alen\",\n    \"last_name\": \"Lee\",\n    \"books\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "author/deleteauthor/8",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:44363/author/deleteauthor/8",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44363",
+					"path": [
+						"author",
+						"deleteauthor",
+						"8"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://localhost:44363/author/deleteauthor/8",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44363",
+							"path": [
+								"author",
+								"deleteauthor",
+								"8"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "author/deleteauthor/8",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://apibooksstore.azurewebsites.net/author/deleteauthor/8",
+							"protocol": "https",
+							"host": [
+								"apibooksstore",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"author",
+								"deleteauthor",
+								"8"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "216"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 16 Dec 2022 08:46:59 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Message\": \"System.Exception: User not Authorized\\r\\n   at BookStoreAPI.Controllers.AuthorController.DeleteAuthor(Int32 id) in C:\\\\Users\\\\barin\\\\source\\\\repos\\\\BookStoreAPI\\\\Controllers\\\\AuthorController.cs:line 63\"\n}"
+				}
+			]
+		},
+		{
+			"name": "author/deleteauthor/8",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:44363/author/deleteauthor/8",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44363",
+					"path": [
+						"author",
+						"deleteauthor",
+						"8"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://localhost:44363/author/deleteauthor/8",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44363",
+							"path": [
+								"author",
+								"deleteauthor",
+								"8"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "author/deleteauthor/8 Copy",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWludXNlciIsIm5iZiI6MTY3MTE4MDg5MCwiZXhwIjoxNjcxMTgyNjkwLCJpYXQiOjE2NzExODA4OTB9.RsZRbiExaktkVLpGCuZicieU4zRhIC1SlyULcUSOV9M",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://apibooksstore.azurewebsites.net/author/deleteauthor/8",
+							"protocol": "https",
+							"host": [
+								"apibooksstore",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"author",
+								"deleteauthor",
+								"8"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "35"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 16 Dec 2022 08:55:24 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Message\": \"Author Id 8 not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "author/deleteauthor/8",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:44363/author/deleteauthor/8",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44363",
+					"path": [
+						"author",
+						"deleteauthor",
+						"8"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://localhost:44363/author/deleteauthor/8",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44363",
+							"path": [
+								"author",
+								"deleteauthor",
+								"8"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "author/deleteauthor/8",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWludXNlciIsIm5iZiI6MTY3MTE4MDg5MCwiZXhwIjoxNjcxMTgyNjkwLCJpYXQiOjE2NzExODA4OTB9.RsZRbiExaktkVLpGCuZicieU4zRhIC1SlyULcUSOV9M",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://apibooksstore.azurewebsites.net/author/deleteauthor/8",
+							"protocol": "https",
+							"host": [
+								"apibooksstore",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"author",
+								"deleteauthor",
+								"8"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 16 Dec 2022 09:00:34 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "author/addauthor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:44363/author/addauthor",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44363",
+					"path": [
+						"author",
+						"addauthor"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://localhost:44363/author/addauthor",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44363",
+							"path": [
+								"author",
+								"addauthor"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "author/addauthor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:44363/author/addauthor",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44363",
+					"path": [
+						"author",
+						"addauthor"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://localhost:44363/author/addauthor",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44363",
+							"path": [
+								"author",
+								"addauthor"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "author/addauthor",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWludXNlciIsIm5iZiI6MTY3MTE4MDg5MCwiZXhwIjoxNjcxMTgyNjkwLCJpYXQiOjE2NzExODA4OTB9.RsZRbiExaktkVLpGCuZicieU4zRhIC1SlyULcUSOV9M",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{        \r\n        \"first_name\": \"Kevin\",\r\n        \"middle_name\": \"Jane\",\r\n        \"last_name\": \"Williams\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://apibooksstore.azurewebsites.net//author/addauthor",
+							"protocol": "https",
+							"host": [
+								"apibooksstore",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"",
+								"author",
+								"addauthor"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "91"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 16 Dec 2022 08:58:09 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"author_id\": 8,\n    \"first_name\": \"Kevin\",\n    \"middle_name\": \"Jane\",\n    \"last_name\": \"Williams\",\n    \"books\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "author/getallauthors",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:44363/author/getallauthors",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44363",
+					"path": [
+						"author",
+						"getallauthors"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44363/author/getallauthors",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44363",
+							"path": [
+								"author",
+								"getallauthors"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "author/getallauthors",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://apibooksstore.azurewebsites.net/author/getallauthors",
+							"protocol": "https",
+							"host": [
+								"apibooksstore",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"author",
+								"getallauthors"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "285"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 16 Dec 2022 08:29:32 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"author_id\": 1,\n        \"first_name\": \"John\",\n        \"middle_name\": \"D\",\n        \"last_name\": \"Smith\"\n    },\n    {\n        \"author_id\": 2,\n        \"first_name\": \"David\",\n        \"middle_name\": \"R\",\n        \"last_name\": \"Miller\"\n    },\n    {\n        \"author_id\": 3,\n        \"first_name\": \"George\",\n        \"middle_name\": \"A\",\n        \"last_name\": \"Lopez\"\n    },\n    {\n        \"author_id\": 4,\n        \"first_name\": \"Mic\",\n        \"middle_name\": \"A\",\n        \"last_name\": \"Lee\"\n    },\n    {\n        \"author_id\": 6,\n        \"first_name\": \"George\",\n        \"middle_name\": \"K\",\n        \"last_name\": \"Fleming\"\n    },\n    {\n        \"author_id\": 7,\n        \"first_name\": \"Peter\",\n        \"middle_name\": \"Noel\",\n        \"last_name\": \"Richards\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "bookbyauthorgenre/3/5/books",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:44363/bookbyauthorgenre/3/5/books",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44363",
+					"path": [
+						"bookbyauthorgenre",
+						"3",
+						"5",
+						"books"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44363/bookbyauthorgenre/3/5/books",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44363",
+							"path": [
+								"bookbyauthorgenre",
+								"3",
+								"5",
+								"books"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "bookbyauthorgenre/3/5/books",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://apibooksstore.azurewebsites.net/bookbyauthorgenre/3/5/books",
+							"protocol": "https",
+							"host": [
+								"apibooksstore",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"bookbyauthorgenre",
+								"3",
+								"5",
+								"books"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "61"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 16 Dec 2022 08:25:01 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Message\": \"Books with Author Id 3 and Genre Id 5 not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "bookbyauthorgenre/1/3/books",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:44363/bookbyauthorgenre/1/3/books",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44363",
+					"path": [
+						"bookbyauthorgenre",
+						"1",
+						"3",
+						"books"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44363/bookbyauthorgenre/1/3/books",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44363",
+							"path": [
+								"bookbyauthorgenre",
+								"1",
+								"3",
+								"books"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "bookbyauthorgenre/1/3/books",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://apibooksstore.azurewebsites.net/bookbyauthorgenre/1/3/books",
+							"protocol": "https",
+							"host": [
+								"apibooksstore",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"bookbyauthorgenre",
+								"1",
+								"3",
+								"books"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "240"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 16 Dec 2022 08:24:12 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"book_id\": 4,\n        \"title\": \"C# Advance\",\n        \"total_pages\": 170,\n        \"rating\": 4,\n        \"isbn\": \"7860-2346-513\",\n        \"published_date\": \"2022-05-06T00:00:00\",\n        \"publisher_id\": 4\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "bookbyauthorgenre/3/3/books",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:44363/bookbyauthorgenre/1/5/books",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44363",
+					"path": [
+						"bookbyauthorgenre",
+						"1",
+						"5",
+						"books"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44363/bookbyauthorgenre/1/5/books",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44363",
+							"path": [
+								"bookbyauthorgenre",
+								"1",
+								"5",
+								"books"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "bookbyauthorgenre/3/3/books",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://apibooksstore.azurewebsites.net/bookbyauthorgenre/3/3/books",
+							"protocol": "https",
+							"host": [
+								"apibooksstore",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"bookbyauthorgenre",
+								"3",
+								"3",
+								"books"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "303"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 16 Dec 2022 08:23:19 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"book_id\": 1,\n        \"title\": \"Concepts of .Net Core\",\n        \"total_pages\": 250,\n        \"rating\": 4.5,\n        \"isbn\": \"3118-7234-761\",\n        \"published_date\": \"2022-03-07T00:00:00\",\n        \"publisher_id\": 1\n    },\n    {\n        \"book_id\": 3,\n        \"title\": \"Web API Concepts\",\n        \"total_pages\": 151,\n        \"rating\": 4.5,\n        \"isbn\": \"6290-1437-602\",\n        \"published_date\": \"2022-01-01T00:00:00\",\n        \"publisher_id\": 3\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "bookbyauthorgenre/99/99/books",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:44363/bookbyauthorgenre/99/99/books",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44363",
+					"path": [
+						"bookbyauthorgenre",
+						"99",
+						"99",
+						"books"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44363/bookbyauthorgenre/99/99/books",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44363",
+							"path": [
+								"bookbyauthorgenre",
+								"99",
+								"99",
+								"books"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "bookbyauthorgenre/99/99/books",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://apibooksstore.azurewebsites.net/bookbyauthorgenre/99/99/books",
+							"protocol": "https",
+							"host": [
+								"apibooksstore",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"bookbyauthorgenre",
+								"99",
+								"99",
+								"books"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "63"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 16 Dec 2022 08:22:48 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Message\": \"Books with Author Id 99 and Genre Id 99 not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "rateabook/rate/21",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:44363/rateabook/rate/21",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44363",
+					"path": [
+						"rateabook",
+						"rate",
+						"21"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://localhost:44363/rateabook/rate/21",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44363",
+							"path": [
+								"rateabook",
+								"rate",
+								"21"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "rateabook/rate/21",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rating\": 3.5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://apibooksstore.azurewebsites.net/rateabook/rate/21",
+							"protocol": "https",
+							"host": [
+								"apibooksstore",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"rateabook",
+								"rate",
+								"21"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "212"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 16 Dec 2022 09:09:56 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Message\": \"System.Exception: User not Authorized\\r\\n   at BookStoreAPI.Controllers.BookController.RateBookById(Int32 id, book book) in D:\\\\a\\\\BookStoreAPI\\\\BookStoreAPI\\\\Controllers\\\\BookController.cs:line 307\"\n}"
+				}
+			]
+		},
+		{
+			"name": "rateabook/rate/21",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:44363/rateabook/rate/21",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44363",
+					"path": [
+						"rateabook",
+						"rate",
+						"21"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://localhost:44363/rateabook/rate/21",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44363",
+							"path": [
+								"rateabook",
+								"rate",
+								"21"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "rateabook/rate/21",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWludXNlciIsIm5iZiI6MTY3MTE4MDg5MCwiZXhwIjoxNjcxMTgyNjkwLCJpYXQiOjE2NzExODA4OTB9.RsZRbiExaktkVLpGCuZicieU4zRhIC1SlyULcUSOV9M",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rating\": 3.5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://apibooksstore.azurewebsites.net/rateabook/rate/21",
+							"protocol": "https",
+							"host": [
+								"apibooksstore",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"rateabook",
+								"rate",
+								"21"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "250"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 16 Dec 2022 09:12:31 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"book_id\": 21,\n    \"title\": \"Introduction to .Net Core\",\n    \"total_pages\": 250,\n    \"rating\": 3.5,\n    \"isbn\": \"3118-7234-761\",\n    \"published_date\": \"2022-03-07T00:00:00\",\n    \"publisher_id\": 1\n}"
+				}
+			]
+		},
+		{
+			"name": "rateabook/rate/99",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:44363/rateabook/rate/21",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44363",
+					"path": [
+						"rateabook",
+						"rate",
+						"21"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://localhost:44363/rateabook/rate/21",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44363",
+							"path": [
+								"rateabook",
+								"rate",
+								"21"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "rateabook/rate/21",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWludXNlciIsIm5iZiI6MTY3MTE4MDg5MCwiZXhwIjoxNjcxMTgyNjkwLCJpYXQiOjE2NzExODA4OTB9.RsZRbiExaktkVLpGCuZicieU4zRhIC1SlyULcUSOV9M",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rating\": 3.5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://apibooksstore.azurewebsites.net/rateabook/rate/99",
+							"protocol": "https",
+							"host": [
+								"apibooksstore",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"rateabook",
+								"rate",
+								"99"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "34"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 16 Dec 2022 09:14:20 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Message\": \"Book Id 99 not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "latestbooksbygenre/3/books/latest",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:44363/latestbooksbygenre/5/books/latest",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44363",
+					"path": [
+						"latestbooksbygenre",
+						"5",
+						"books",
+						"latest"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44363/latestbooksbygenre/5/books/latest",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44363",
+							"path": [
+								"latestbooksbygenre",
+								"5",
+								"books",
+								"latest"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "latestbooksbygenre/3/books/latest",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://apibooksstore.azurewebsites.net/latestbooksbygenre/3/books/latest",
+							"protocol": "https",
+							"host": [
+								"apibooksstore",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"latestbooksbygenre",
+								"3",
+								"books",
+								"latest"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "584"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 16 Dec 2022 08:18:50 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"book_id\": 36,\n        \"title\": \"SQL 11\",\n        \"total_pages\": 233,\n        \"rating\": 4,\n        \"isbn\": \"2536-4526-147\",\n        \"published_date\": \"2022-05-07T00:00:00\",\n        \"publisher_id\": 2\n    },\n    {\n        \"book_id\": 4,\n        \"title\": \"C# Advance\",\n        \"total_pages\": 170,\n        \"rating\": 4,\n        \"isbn\": \"7860-2346-513\",\n        \"published_date\": \"2022-05-06T00:00:00\",\n        \"publisher_id\": 4\n    },\n    {\n        \"book_id\": 20,\n        \"title\": \"Concepts of MVC 2\",\n        \"total_pages\": 240,\n        \"rating\": 4,\n        \"isbn\": \"1131-2234-111\",\n        \"published_date\": \"2022-05-04T00:00:00\",\n        \"publisher_id\": 2\n    },\n    {\n        \"book_id\": 19,\n        \"title\": \"Introduction to Dot Net Core 7\",\n        \"total_pages\": 140,\n        \"rating\": 4,\n        \"isbn\": \"2131-6234-611\",\n        \"published_date\": \"2022-05-03T00:00:00\",\n        \"publisher_id\": 4\n    },\n    {\n        \"book_id\": 35,\n        \"title\": \"SQL 10\",\n        \"total_pages\": 123,\n        \"rating\": 3,\n        \"isbn\": \"5236-8561-254\",\n        \"published_date\": \"2022-04-07T00:00:00\",\n        \"publisher_id\": 1\n    },\n    {\n        \"book_id\": 12,\n        \"title\": \"Introduction to .Net Core\",\n        \"total_pages\": 250,\n        \"rating\": 4.5,\n        \"isbn\": \"3118-7234-761\",\n        \"published_date\": \"2022-03-07T00:00:00\",\n        \"publisher_id\": 1\n    },\n    {\n        \"book_id\": 1,\n        \"title\": \"Concepts of .Net Core\",\n        \"total_pages\": 250,\n        \"rating\": 4.5,\n        \"isbn\": \"3118-7234-761\",\n        \"published_date\": \"2022-03-07T00:00:00\",\n        \"publisher_id\": 1\n    },\n    {\n        \"book_id\": 21,\n        \"title\": \"Introduction to .Net Core\",\n        \"total_pages\": 250,\n        \"rating\": 3,\n        \"isbn\": \"3118-7234-761\",\n        \"published_date\": \"2022-03-07T00:00:00\",\n        \"publisher_id\": 1\n    },\n    {\n        \"book_id\": 2,\n        \"title\": \"Introduction to ASP.Net\",\n        \"total_pages\": 203,\n        \"rating\": 4,\n        \"isbn\": \"7516-2533-643\",\n        \"published_date\": \"2022-03-04T00:00:00\",\n        \"publisher_id\": 2\n    },\n    {\n        \"book_id\": 33,\n        \"title\": \"Concepts of SQL\",\n        \"total_pages\": 300,\n        \"rating\": 4.5,\n        \"isbn\": \"8523-7465-123\",\n        \"published_date\": \"2022-02-10T00:00:00\",\n        \"publisher_id\": 3\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "latestbooksbygenre/300/books/latest",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:44363/latestbooksbygenre/300/books/latest",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44363",
+					"path": [
+						"latestbooksbygenre",
+						"300",
+						"books",
+						"latest"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44363/latestbooksbygenre/300/books/latest",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44363",
+							"path": [
+								"latestbooksbygenre",
+								"300",
+								"books",
+								"latest"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "latestbooksbygenre/300/books/latest",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://apibooksstore.azurewebsites.net/latestbooksbygenre/300/books/latest",
+							"protocol": "https",
+							"host": [
+								"apibooksstore",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"latestbooksbygenre",
+								"300",
+								"books",
+								"latest"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "47"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 16 Dec 2022 08:17:52 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Message\": \"Books with Genre Id 300 not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "booksbypublisher/3/books",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:44363/booksbypublisher/3/books",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44363",
+					"path": [
+						"booksbypublisher",
+						"3",
+						"books"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44363/booksbypublisher/3/books",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44363",
+							"path": [
+								"booksbypublisher",
+								"3",
+								"books"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "booksbypublisher/3/books",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://apibooksstore.azurewebsites.net/booksbypublisher/3/books",
+							"protocol": "https",
+							"host": [
+								"apibooksstore",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"booksbypublisher",
+								"3",
+								"books"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "502"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 16 Dec 2022 08:17:22 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"book_id\": 3,\n        \"title\": \"Web API Concepts\",\n        \"total_pages\": 151,\n        \"rating\": 4.5,\n        \"isbn\": \"6290-1437-602\",\n        \"published_date\": \"2022-01-01T00:00:00\",\n        \"publisher_id\": 3\n    },\n    {\n        \"book_id\": 9,\n        \"title\": \"Introduction to MVC\",\n        \"total_pages\": 150,\n        \"rating\": 4,\n        \"isbn\": \"7818-6234-901\",\n        \"published_date\": \"2021-01-03T00:00:00\",\n        \"publisher_id\": 3\n    },\n    {\n        \"book_id\": 10,\n        \"title\": \"Concepts of Web APIs\",\n        \"total_pages\": 189,\n        \"rating\": 4,\n        \"isbn\": \"9912-2563-892\",\n        \"published_date\": \"2021-01-01T00:00:00\",\n        \"publisher_id\": 3\n    },\n    {\n        \"book_id\": 23,\n        \"title\": \"Introduction to Dot Net Core 6\",\n        \"total_pages\": 130,\n        \"rating\": 4,\n        \"isbn\": \"2231-7234-651\",\n        \"published_date\": \"2022-02-03T00:00:00\",\n        \"publisher_id\": 3\n    },\n    {\n        \"book_id\": 25,\n        \"title\": \"API Vol 1\",\n        \"total_pages\": 189,\n        \"rating\": 4,\n        \"isbn\": \"9912-2563-892\",\n        \"published_date\": \"2021-01-01T00:00:00\",\n        \"publisher_id\": 3\n    },\n    {\n        \"book_id\": 28,\n        \"title\": \"ASP Vol 3\",\n        \"total_pages\": 216,\n        \"rating\": 3,\n        \"isbn\": \"8563-4125-896\",\n        \"published_date\": \"2021-03-03T00:00:00\",\n        \"publisher_id\": 3\n    },\n    {\n        \"book_id\": 33,\n        \"title\": \"Concepts of SQL\",\n        \"total_pages\": 300,\n        \"rating\": 4.5,\n        \"isbn\": \"8523-7465-123\",\n        \"published_date\": \"2022-02-10T00:00:00\",\n        \"publisher_id\": 3\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "booksbypublisher/88/books",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:44363/booksbypublisher/88/books",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44363",
+					"path": [
+						"booksbypublisher",
+						"88",
+						"books"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44363/booksbypublisher/88/books",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44363",
+							"path": [
+								"booksbypublisher",
+								"88",
+								"books"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "booksbypublisher/88/books",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://apibooksstore.azurewebsites.net/booksbypublisher/88/books",
+							"protocol": "https",
+							"host": [
+								"apibooksstore",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"booksbypublisher",
+								"88",
+								"books"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "50"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 16 Dec 2022 08:16:34 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Message\": \"Books with Publisher Id 88 not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "booksbygenre/3/books",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:44363/booksbygenre/5/books",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44363",
+					"path": [
+						"booksbygenre",
+						"5",
+						"books"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44363/booksbygenre/5/books",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44363",
+							"path": [
+								"booksbygenre",
+								"5",
+								"books"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "booksbygenre/3/books",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://apibooksstore.azurewebsites.net/booksbygenre/3/books",
+							"protocol": "https",
+							"host": [
+								"apibooksstore",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"booksbygenre",
+								"3",
+								"books"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "1065"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 16 Dec 2022 08:14:58 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"book_id\": 1,\n        \"title\": \"Concepts of .Net Core\",\n        \"total_pages\": 250,\n        \"rating\": 4.5,\n        \"isbn\": \"3118-7234-761\",\n        \"published_date\": \"2022-03-07T00:00:00\",\n        \"publisher_id\": 1\n    },\n    {\n        \"book_id\": 2,\n        \"title\": \"Introduction to ASP.Net\",\n        \"total_pages\": 203,\n        \"rating\": 4,\n        \"isbn\": \"7516-2533-643\",\n        \"published_date\": \"2022-03-04T00:00:00\",\n        \"publisher_id\": 2\n    },\n    {\n        \"book_id\": 3,\n        \"title\": \"Web API Concepts\",\n        \"total_pages\": 151,\n        \"rating\": 4.5,\n        \"isbn\": \"6290-1437-602\",\n        \"published_date\": \"2022-01-01T00:00:00\",\n        \"publisher_id\": 3\n    },\n    {\n        \"book_id\": 4,\n        \"title\": \"C# Advance\",\n        \"total_pages\": 170,\n        \"rating\": 4,\n        \"isbn\": \"7860-2346-513\",\n        \"published_date\": \"2022-05-06T00:00:00\",\n        \"publisher_id\": 4\n    },\n    {\n        \"book_id\": 5,\n        \"title\": \"Introduction to MVC\",\n        \"total_pages\": 200,\n        \"rating\": 5,\n        \"isbn\": \"2107-5593-842\",\n        \"published_date\": \"2021-02-01T00:00:00\",\n        \"publisher_id\": 4\n    },\n    {\n        \"book_id\": 9,\n        \"title\": \"Introduction to MVC\",\n        \"total_pages\": 150,\n        \"rating\": 4,\n        \"isbn\": \"7818-6234-901\",\n        \"published_date\": \"2021-01-03T00:00:00\",\n        \"publisher_id\": 3\n    },\n    {\n        \"book_id\": 10,\n        \"title\": \"Concepts of Web APIs\",\n        \"total_pages\": 189,\n        \"rating\": 4,\n        \"isbn\": \"9912-2563-892\",\n        \"published_date\": \"2021-01-01T00:00:00\",\n        \"publisher_id\": 3\n    },\n    {\n        \"book_id\": 12,\n        \"title\": \"Introduction to .Net Core\",\n        \"total_pages\": 250,\n        \"rating\": 4.5,\n        \"isbn\": \"3118-7234-761\",\n        \"published_date\": \"2022-03-07T00:00:00\",\n        \"publisher_id\": 1\n    },\n    {\n        \"book_id\": 13,\n        \"title\": \"Introduction to ASP.Net 5\",\n        \"total_pages\": 200,\n        \"rating\": 5,\n        \"isbn\": \"2131-6234-601\",\n        \"published_date\": \"2022-01-03T00:00:00\",\n        \"publisher_id\": 2\n    },\n    {\n        \"book_id\": 18,\n        \"title\": \"Introduction to Dot Net Core 5\",\n        \"total_pages\": 200,\n        \"rating\": 5,\n        \"isbn\": \"2131-6234-601\",\n        \"published_date\": \"2022-01-03T00:00:00\",\n        \"publisher_id\": 2\n    },\n    {\n        \"book_id\": 19,\n        \"title\": \"Introduction to Dot Net Core 7\",\n        \"total_pages\": 140,\n        \"rating\": 4,\n        \"isbn\": \"2131-6234-611\",\n        \"published_date\": \"2022-05-03T00:00:00\",\n        \"publisher_id\": 4\n    },\n    {\n        \"book_id\": 20,\n        \"title\": \"Concepts of MVC 2\",\n        \"total_pages\": 240,\n        \"rating\": 4,\n        \"isbn\": \"1131-2234-111\",\n        \"published_date\": \"2022-05-04T00:00:00\",\n        \"publisher_id\": 2\n    },\n    {\n        \"book_id\": 21,\n        \"title\": \"Introduction to .Net Core\",\n        \"total_pages\": 250,\n        \"rating\": 3,\n        \"isbn\": \"3118-7234-761\",\n        \"published_date\": \"2022-03-07T00:00:00\",\n        \"publisher_id\": 1\n    },\n    {\n        \"book_id\": 23,\n        \"title\": \"Introduction to Dot Net Core 6\",\n        \"total_pages\": 130,\n        \"rating\": 4,\n        \"isbn\": \"2231-7234-651\",\n        \"published_date\": \"2022-02-03T00:00:00\",\n        \"publisher_id\": 3\n    },\n    {\n        \"book_id\": 25,\n        \"title\": \"API Vol 1\",\n        \"total_pages\": 189,\n        \"rating\": 4,\n        \"isbn\": \"9912-2563-892\",\n        \"published_date\": \"2021-01-01T00:00:00\",\n        \"publisher_id\": 3\n    },\n    {\n        \"book_id\": 26,\n        \"title\": \"API Vol 3\",\n        \"total_pages\": 150,\n        \"rating\": 3,\n        \"isbn\": \"6164-2569-892\",\n        \"published_date\": \"2021-01-02T00:00:00\",\n        \"publisher_id\": 1\n    },\n    {\n        \"book_id\": 27,\n        \"title\": \"MVC Vol 3\",\n        \"total_pages\": 43,\n        \"rating\": 4,\n        \"isbn\": \"5874-1256-852\",\n        \"published_date\": \"2021-03-02T00:00:00\",\n        \"publisher_id\": 2\n    },\n    {\n        \"book_id\": 28,\n        \"title\": \"ASP Vol 3\",\n        \"total_pages\": 216,\n        \"rating\": 3,\n        \"isbn\": \"8563-4125-896\",\n        \"published_date\": \"2021-03-03T00:00:00\",\n        \"publisher_id\": 3\n    },\n    {\n        \"book_id\": 29,\n        \"title\": \"C# Vol 3\",\n        \"total_pages\": 233,\n        \"rating\": 4,\n        \"isbn\": \"8523-7462-111\",\n        \"published_date\": \"2022-02-01T00:00:00\",\n        \"publisher_id\": 4\n    },\n    {\n        \"book_id\": 31,\n        \"title\": \"Core Vol 3\",\n        \"total_pages\": 142,\n        \"rating\": 3,\n        \"isbn\": \"7852-1463-856\",\n        \"published_date\": \"2022-02-05T00:00:00\",\n        \"publisher_id\": 1\n    },\n    {\n        \"book_id\": 32,\n        \"title\": \"Concepts of Web API 3\",\n        \"total_pages\": 161,\n        \"rating\": 4,\n        \"isbn\": \"1325-8569-741\",\n        \"published_date\": \"2022-01-05T00:00:00\",\n        \"publisher_id\": 2\n    },\n    {\n        \"book_id\": 33,\n        \"title\": \"Concepts of SQL\",\n        \"total_pages\": 300,\n        \"rating\": 4.5,\n        \"isbn\": \"8523-7465-123\",\n        \"published_date\": \"2022-02-10T00:00:00\",\n        \"publisher_id\": 3\n    },\n    {\n        \"book_id\": 34,\n        \"title\": \"Concepts of PL SQL\",\n        \"total_pages\": 250,\n        \"rating\": 4,\n        \"isbn\": \"2794-1634-856\",\n        \"published_date\": \"2022-02-07T00:00:00\",\n        \"publisher_id\": 4\n    },\n    {\n        \"book_id\": 35,\n        \"title\": \"SQL 10\",\n        \"total_pages\": 123,\n        \"rating\": 3,\n        \"isbn\": \"5236-8561-254\",\n        \"published_date\": \"2022-04-07T00:00:00\",\n        \"publisher_id\": 1\n    },\n    {\n        \"book_id\": 36,\n        \"title\": \"SQL 11\",\n        \"total_pages\": 233,\n        \"rating\": 4,\n        \"isbn\": \"2536-4526-147\",\n        \"published_date\": \"2022-05-07T00:00:00\",\n        \"publisher_id\": 2\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "booksbygenre/200/books",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:44363/booksbygenre/200/books",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44363",
+					"path": [
+						"booksbygenre",
+						"200",
+						"books"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44363/booksbygenre/200/books",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44363",
+							"path": [
+								"booksbygenre",
+								"200",
+								"books"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "booksbygenre/200/books",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://apibooksstore.azurewebsites.net/booksbygenre/200/books",
+							"protocol": "https",
+							"host": [
+								"apibooksstore",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"booksbygenre",
+								"200",
+								"books"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "47"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 16 Dec 2022 08:13:53 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Message\": \"Books with Genre Id 200 not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "booksbyauthor/3/books",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:44363/booksbyauthor/3/books",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44363",
+					"path": [
+						"booksbyauthor",
+						"3",
+						"books"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44363/booksbyauthor/3/books",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44363",
+							"path": [
+								"booksbyauthor",
+								"3",
+								"books"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "booksbyauthor/3/books",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://apibooksstore.azurewebsites.net/booksbyauthor/3/books",
+							"protocol": "https",
+							"host": [
+								"apibooksstore",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"booksbyauthor",
+								"3",
+								"books"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "303"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 16 Dec 2022 08:12:58 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"book_id\": 1,\n        \"title\": \"Concepts of .Net Core\",\n        \"total_pages\": 250,\n        \"rating\": 4.5,\n        \"isbn\": \"3118-7234-761\",\n        \"published_date\": \"2022-03-07T00:00:00\",\n        \"publisher_id\": 1\n    },\n    {\n        \"book_id\": 3,\n        \"title\": \"Web API Concepts\",\n        \"total_pages\": 151,\n        \"rating\": 4.5,\n        \"isbn\": \"6290-1437-602\",\n        \"published_date\": \"2022-01-01T00:00:00\",\n        \"publisher_id\": 3\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "booksbyauthor/100/books",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:44363/booksbyauthor/100/books",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44363",
+					"path": [
+						"booksbyauthor",
+						"100",
+						"books"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44363/booksbyauthor/100/books",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44363",
+							"path": [
+								"booksbyauthor",
+								"100",
+								"books"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "booksbyauthor/100/books",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://apibooksstore.azurewebsites.net/booksbyauthor/100/books",
+							"protocol": "https",
+							"host": [
+								"apibooksstore",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"booksbyauthor",
+								"100",
+								"books"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "48"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 16 Dec 2022 08:11:58 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Message\": \"Books with Author Id 100 not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "books/10",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:44363/books/10",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44363",
+					"path": [
+						"books",
+						"10"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44363/books/10",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44363",
+							"path": [
+								"books",
+								"10"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "books/10",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://apibooksstore.azurewebsites.net/books/10",
+							"protocol": "https",
+							"host": [
+								"apibooksstore",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"books",
+								"10"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "245"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 16 Dec 2022 07:30:40 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"book_id\": 10,\n    \"title\": \"Concepts of Web APIs\",\n    \"total_pages\": 189,\n    \"rating\": 4,\n    \"isbn\": \"9912-2563-892\",\n    \"published_date\": \"2021-01-01T00:00:00\",\n    \"publisher_id\": 3\n}"
+				}
+			]
+		},
+		{
+			"name": "books/777",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:44363/books/777",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44363",
+					"path": [
+						"books",
+						"777"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44363/books/777",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44363",
+							"path": [
+								"books",
+								"777"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "books/777",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://apibooksstore.azurewebsites.net//books/777",
+							"protocol": "https",
+							"host": [
+								"apibooksstore",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"",
+								"books",
+								"777"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "35"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 16 Dec 2022 07:30:12 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Message\": \"Book Id 777 not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "book/updatebook/10",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:44363/book/updatebook/10",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44363",
+					"path": [
+						"book",
+						"updatebook",
+						"10"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://localhost:44363/book/updatebook/10",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44363",
+							"path": [
+								"book",
+								"updatebook",
+								"10"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "book/updatebook/10",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWludXNlciIsIm5iZiI6MTY3MTExMzQzMywiZXhwIjoxNjcxMTE1MjMzLCJpYXQiOjE2NzExMTM0MzN9.CLRNxdp541o3_qsIzaxCb0ZTsUo8IzstGvJoipaKd0c",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Concepts of Web APIs 7\",\r\n    \"total_pages\": 189,\r\n    \"rating\": 4.0,\r\n    \"isbn\": \"9912-2563-892\",\r\n    \"published_date\": \"2021-01-01T00:00:00\",\r\n    \"publisher_id\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://apibooksstore.azurewebsites.net/book/updatebook/10",
+							"protocol": "https",
+							"host": [
+								"apibooksstore",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"book",
+								"updatebook",
+								"10"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "210"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 16 Dec 2022 09:06:30 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Message\": \"System.Exception: User not Authorized\\r\\n   at BookStoreAPI.Controllers.BookController.UpdateBook(Int32 id, book book) in D:\\\\a\\\\BookStoreAPI\\\\BookStoreAPI\\\\Controllers\\\\BookController.cs:line 108\"\n}"
+				}
+			]
+		},
+		{
+			"name": "book/updatebook/333",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:44363/book/updatebook/333",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44363",
+					"path": [
+						"book",
+						"updatebook",
+						"333"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://localhost:44363/book/updatebook/333",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44363",
+							"path": [
+								"book",
+								"updatebook",
+								"333"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "book/updatebook/333",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWludXNlciIsIm5iZiI6MTY3MTE4MDg5MCwiZXhwIjoxNjcxMTgyNjkwLCJpYXQiOjE2NzExODA4OTB9.RsZRbiExaktkVLpGCuZicieU4zRhIC1SlyULcUSOV9M",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"API Vol 1\",\r\n    \"total_pages\": 189,\r\n    \"rating\": 4.0,\r\n    \"isbn\": \"9912-2563-892\",\r\n    \"published_date\": \"2021-01-01T00:00:00\",\r\n    \"publisher_id\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://apibooksstore.azurewebsites.net/book/updatebook/333",
+							"protocol": "https",
+							"host": [
+								"apibooksstore",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"book",
+								"updatebook",
+								"333"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWludXNlciIsIm5iZiI6MTY3MTE4MDg5MCwiZXhwIjoxNjcxMTgyNjkwLCJpYXQiOjE2NzExODA4OTB9.RsZRbiExaktkVLpGCuZicieU4zRhIC1SlyULcUSOV9M",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "35"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 16 Dec 2022 09:25:46 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Message\": \"Book Id 333 not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "book/updatebook/10",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:44363/book/updatebook/10",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44363",
+					"path": [
+						"book",
+						"updatebook",
+						"10"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://localhost:44363/book/updatebook/10",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44363",
+							"path": [
+								"book",
+								"updatebook",
+								"10"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "book/updatebook/10",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWludXNlciIsIm5iZiI6MTY3MTE4MDg5MCwiZXhwIjoxNjcxMTgyNjkwLCJpYXQiOjE2NzExODA4OTB9.RsZRbiExaktkVLpGCuZicieU4zRhIC1SlyULcUSOV9M",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Concepts API 1\",\r\n    \"total_pages\": 189,\r\n    \"rating\": 4.0,\r\n    \"isbn\": \"9912-2563-892\",\r\n    \"published_date\": \"2021-01-01T00:00:00\",\r\n    \"publisher_id\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://apibooksstore.azurewebsites.net/book/updatebook/10",
+							"protocol": "https",
+							"host": [
+								"apibooksstore",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"book",
+								"updatebook",
+								"10"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWludXNlciIsIm5iZiI6MTY3MTE4MDg5MCwiZXhwIjoxNjcxMTgyNjkwLCJpYXQiOjE2NzExODA4OTB9.RsZRbiExaktkVLpGCuZicieU4zRhIC1SlyULcUSOV9M",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "238"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 16 Dec 2022 09:27:41 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"book_id\": 10,\n    \"title\": \"Concepts API 1\",\n    \"total_pages\": 189,\n    \"rating\": 4,\n    \"isbn\": \"9912-2563-892\",\n    \"published_date\": \"2021-01-01T00:00:00\",\n    \"publisher_id\": 3\n}"
+				}
+			]
+		},
+		{
+			"name": "book/deletebook/24",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:44363/book/deletebook/24",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44363",
+					"path": [
+						"book",
+						"deletebook",
+						"24"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://localhost:44363/book/deletebook/24",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44363",
+							"path": [
+								"book",
+								"deletebook",
+								"24"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "book/deletebook/24",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://apibooksstore.azurewebsites.net/book/deletebook/26",
+							"protocol": "https",
+							"host": [
+								"apibooksstore",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"book",
+								"deletebook",
+								"26"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "198"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 16 Dec 2022 09:23:11 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Message\": \"System.Exception: User not Authorized\\r\\n   at BookStoreAPI.Controllers.BookController.DeleteBook(Int32 id) in D:\\\\a\\\\BookStoreAPI\\\\BookStoreAPI\\\\Controllers\\\\BookController.cs:line 70\"\n}"
+				}
+			]
+		},
+		{
+			"name": "book/deletebook/1333",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:44363/book/deletebook/1333",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44363",
+					"path": [
+						"book",
+						"deletebook",
+						"1333"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://localhost:44363/book/deletebook/1333",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44363",
+							"path": [
+								"book",
+								"deletebook",
+								"1333"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "book/deletebook/1333",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWludXNlciIsIm5iZiI6MTY3MTE4MDg5MCwiZXhwIjoxNjcxMTgyNjkwLCJpYXQiOjE2NzExODA4OTB9.RsZRbiExaktkVLpGCuZicieU4zRhIC1SlyULcUSOV9M",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://apibooksstore.azurewebsites.net/book/deletebook/1333",
+							"protocol": "https",
+							"host": [
+								"apibooksstore",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"book",
+								"deletebook",
+								"1333"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "36"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 16 Dec 2022 09:22:39 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Message\": \"Book Id 1333 not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "book/deletebook/24",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:44363/book/deletebook/24",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44363",
+					"path": [
+						"book",
+						"deletebook",
+						"24"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://localhost:44363/book/deletebook/24",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44363",
+							"path": [
+								"book",
+								"deletebook",
+								"24"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "book/deletebook/24",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWludXNlciIsIm5iZiI6MTY3MTE4MDg5MCwiZXhwIjoxNjcxMTgyNjkwLCJpYXQiOjE2NzExODA4OTB9.RsZRbiExaktkVLpGCuZicieU4zRhIC1SlyULcUSOV9M",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://apibooksstore.azurewebsites.net/book/deletebook/26",
+							"protocol": "https",
+							"host": [
+								"apibooksstore",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"book",
+								"deletebook",
+								"26"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 16 Dec 2022 09:21:46 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "book/addbook",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:44363/book/addbook",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44363",
+					"path": [
+						"book",
+						"addbook"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://localhost:44363/book/addbook",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44363",
+							"path": [
+								"book",
+								"addbook"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "book/addbook",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "toekn",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWludXNlciIsIm5iZiI6MTY3MTE4MDg5MCwiZXhwIjoxNjcxMTgyNjkwLCJpYXQiOjE2NzExODA4OTB9.RsZRbiExaktkVLpGCuZicieU4zRhIC1SlyULcUSOV9M",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"API Vol 1\",\r\n    \"total_pages\": 189,\r\n    \"rating\": 4.0,\r\n    \"isbn\": \"9912-2563-892\",\r\n    \"published_date\": \"2021-01-01T00:00:00\",\r\n    \"publisher_id\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://apibooksstore.azurewebsites.net/book/addbook",
+							"protocol": "https",
+							"host": [
+								"apibooksstore",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"book",
+								"addbook"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "196"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 16 Dec 2022 09:17:19 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Message\": \"System.Exception: User not Authorized\\r\\n   at BookStoreAPI.Controllers.BookController.AddBook(book book) in D:\\\\a\\\\BookStoreAPI\\\\BookStoreAPI\\\\Controllers\\\\BookController.cs:line 42\"\n}"
+				}
+			]
+		},
+		{
+			"name": "book/addbook",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:44363/book/addbook",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44363",
+					"path": [
+						"book",
+						"addbook"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://localhost:44363/book/addbook",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44363",
+							"path": [
+								"book",
+								"addbook"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "book/addbook",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWludXNlciIsIm5iZiI6MTY3MTE4MDg5MCwiZXhwIjoxNjcxMTgyNjkwLCJpYXQiOjE2NzExODA4OTB9.RsZRbiExaktkVLpGCuZicieU4zRhIC1SlyULcUSOV9M",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"API Vol 7\",\r\n    \"total_pages\": 189,\r\n    \"rating\": 4.0,\r\n    \"isbn\": \"9912-2563-892\",\r\n    \"published_date\": \"2021-01-01T00:00:00\",\r\n    \"publisher_id\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://apibooksstore.azurewebsites.net/book/addbook",
+							"protocol": "https",
+							"host": [
+								"apibooksstore",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"book",
+								"addbook"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "144"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 16 Dec 2022 09:16:16 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"book_id\": 37,\n    \"title\": \"API Vol 7\",\n    \"total_pages\": 189,\n    \"rating\": 4,\n    \"isbn\": \"9912-2563-892\",\n    \"published_date\": \"2021-01-01T00:00:00\",\n    \"publisher_id\": 3\n}"
+				}
+			]
+		},
+		{
+			"name": "book/getallbooks",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:44363/book/getallbooks",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44363",
+					"path": [
+						"book",
+						"getallbooks"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44363/book/getallbooks",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44363",
+							"path": [
+								"book",
+								"getallbooks"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "book/getallbooks",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://apibooksstore.azurewebsites.net/book/getallbooks",
+							"protocol": "https",
+							"host": [
+								"apibooksstore",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"book",
+								"getallbooks"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "1065"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 16 Dec 2022 07:27:37 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"book_id\": 1,\n        \"title\": \"Concepts of .Net Core\",\n        \"total_pages\": 250,\n        \"rating\": 4.5,\n        \"isbn\": \"3118-7234-761\",\n        \"published_date\": \"2022-03-07T00:00:00\",\n        \"publisher_id\": 1\n    },\n    {\n        \"book_id\": 2,\n        \"title\": \"Introduction to ASP.Net\",\n        \"total_pages\": 203,\n        \"rating\": 4,\n        \"isbn\": \"7516-2533-643\",\n        \"published_date\": \"2022-03-04T00:00:00\",\n        \"publisher_id\": 2\n    },\n    {\n        \"book_id\": 3,\n        \"title\": \"Web API Concepts\",\n        \"total_pages\": 151,\n        \"rating\": 4.5,\n        \"isbn\": \"6290-1437-602\",\n        \"published_date\": \"2022-01-01T00:00:00\",\n        \"publisher_id\": 3\n    },\n    {\n        \"book_id\": 4,\n        \"title\": \"C# Advance\",\n        \"total_pages\": 170,\n        \"rating\": 4,\n        \"isbn\": \"7860-2346-513\",\n        \"published_date\": \"2022-05-06T00:00:00\",\n        \"publisher_id\": 4\n    },\n    {\n        \"book_id\": 5,\n        \"title\": \"Introduction to MVC\",\n        \"total_pages\": 200,\n        \"rating\": 5,\n        \"isbn\": \"2107-5593-842\",\n        \"published_date\": \"2021-02-01T00:00:00\",\n        \"publisher_id\": 4\n    },\n    {\n        \"book_id\": 9,\n        \"title\": \"Introduction to MVC\",\n        \"total_pages\": 150,\n        \"rating\": 4,\n        \"isbn\": \"7818-6234-901\",\n        \"published_date\": \"2021-01-03T00:00:00\",\n        \"publisher_id\": 3\n    },\n    {\n        \"book_id\": 10,\n        \"title\": \"Concepts of Web APIs\",\n        \"total_pages\": 189,\n        \"rating\": 4,\n        \"isbn\": \"9912-2563-892\",\n        \"published_date\": \"2021-01-01T00:00:00\",\n        \"publisher_id\": 3\n    },\n    {\n        \"book_id\": 12,\n        \"title\": \"Introduction to .Net Core\",\n        \"total_pages\": 250,\n        \"rating\": 4.5,\n        \"isbn\": \"3118-7234-761\",\n        \"published_date\": \"2022-03-07T00:00:00\",\n        \"publisher_id\": 1\n    },\n    {\n        \"book_id\": 13,\n        \"title\": \"Introduction to ASP.Net 5\",\n        \"total_pages\": 200,\n        \"rating\": 5,\n        \"isbn\": \"2131-6234-601\",\n        \"published_date\": \"2022-01-03T00:00:00\",\n        \"publisher_id\": 2\n    },\n    {\n        \"book_id\": 18,\n        \"title\": \"Introduction to Dot Net Core 5\",\n        \"total_pages\": 200,\n        \"rating\": 5,\n        \"isbn\": \"2131-6234-601\",\n        \"published_date\": \"2022-01-03T00:00:00\",\n        \"publisher_id\": 2\n    },\n    {\n        \"book_id\": 19,\n        \"title\": \"Introduction to Dot Net Core 7\",\n        \"total_pages\": 140,\n        \"rating\": 4,\n        \"isbn\": \"2131-6234-611\",\n        \"published_date\": \"2022-05-03T00:00:00\",\n        \"publisher_id\": 4\n    },\n    {\n        \"book_id\": 20,\n        \"title\": \"Concepts of MVC 2\",\n        \"total_pages\": 240,\n        \"rating\": 4,\n        \"isbn\": \"1131-2234-111\",\n        \"published_date\": \"2022-05-04T00:00:00\",\n        \"publisher_id\": 2\n    },\n    {\n        \"book_id\": 21,\n        \"title\": \"Introduction to .Net Core\",\n        \"total_pages\": 250,\n        \"rating\": 3,\n        \"isbn\": \"3118-7234-761\",\n        \"published_date\": \"2022-03-07T00:00:00\",\n        \"publisher_id\": 1\n    },\n    {\n        \"book_id\": 23,\n        \"title\": \"Introduction to Dot Net Core 6\",\n        \"total_pages\": 130,\n        \"rating\": 4,\n        \"isbn\": \"2231-7234-651\",\n        \"published_date\": \"2022-02-03T00:00:00\",\n        \"publisher_id\": 3\n    },\n    {\n        \"book_id\": 25,\n        \"title\": \"API Vol 1\",\n        \"total_pages\": 189,\n        \"rating\": 4,\n        \"isbn\": \"9912-2563-892\",\n        \"published_date\": \"2021-01-01T00:00:00\",\n        \"publisher_id\": 3\n    },\n    {\n        \"book_id\": 26,\n        \"title\": \"API Vol 3\",\n        \"total_pages\": 150,\n        \"rating\": 3,\n        \"isbn\": \"6164-2569-892\",\n        \"published_date\": \"2021-01-02T00:00:00\",\n        \"publisher_id\": 1\n    },\n    {\n        \"book_id\": 27,\n        \"title\": \"MVC Vol 3\",\n        \"total_pages\": 43,\n        \"rating\": 4,\n        \"isbn\": \"5874-1256-852\",\n        \"published_date\": \"2021-03-02T00:00:00\",\n        \"publisher_id\": 2\n    },\n    {\n        \"book_id\": 28,\n        \"title\": \"ASP Vol 3\",\n        \"total_pages\": 216,\n        \"rating\": 3,\n        \"isbn\": \"8563-4125-896\",\n        \"published_date\": \"2021-03-03T00:00:00\",\n        \"publisher_id\": 3\n    },\n    {\n        \"book_id\": 29,\n        \"title\": \"C# Vol 3\",\n        \"total_pages\": 233,\n        \"rating\": 4,\n        \"isbn\": \"8523-7462-111\",\n        \"published_date\": \"2022-02-01T00:00:00\",\n        \"publisher_id\": 4\n    },\n    {\n        \"book_id\": 31,\n        \"title\": \"Core Vol 3\",\n        \"total_pages\": 142,\n        \"rating\": 3,\n        \"isbn\": \"7852-1463-856\",\n        \"published_date\": \"2022-02-05T00:00:00\",\n        \"publisher_id\": 1\n    },\n    {\n        \"book_id\": 32,\n        \"title\": \"Concepts of Web API 3\",\n        \"total_pages\": 161,\n        \"rating\": 4,\n        \"isbn\": \"1325-8569-741\",\n        \"published_date\": \"2022-01-05T00:00:00\",\n        \"publisher_id\": 2\n    },\n    {\n        \"book_id\": 33,\n        \"title\": \"Concepts of SQL\",\n        \"total_pages\": 300,\n        \"rating\": 4.5,\n        \"isbn\": \"8523-7465-123\",\n        \"published_date\": \"2022-02-10T00:00:00\",\n        \"publisher_id\": 3\n    },\n    {\n        \"book_id\": 34,\n        \"title\": \"Concepts of PL SQL\",\n        \"total_pages\": 250,\n        \"rating\": 4,\n        \"isbn\": \"2794-1634-856\",\n        \"published_date\": \"2022-02-07T00:00:00\",\n        \"publisher_id\": 4\n    },\n    {\n        \"book_id\": 35,\n        \"title\": \"SQL 10\",\n        \"total_pages\": 123,\n        \"rating\": 3,\n        \"isbn\": \"5236-8561-254\",\n        \"published_date\": \"2022-04-07T00:00:00\",\n        \"publisher_id\": 1\n    },\n    {\n        \"book_id\": 36,\n        \"title\": \"SQL 11\",\n        \"total_pages\": 233,\n        \"rating\": 4,\n        \"isbn\": \"2536-4526-147\",\n        \"published_date\": \"2022-05-07T00:00:00\",\n        \"publisher_id\": 2\n    }\n]"
+				}
+			]
+		}
+	]
+}
