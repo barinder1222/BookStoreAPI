@@ -22,12 +22,11 @@ namespace BookStoreAPI.Models
         }
 
         public int author_id { get; set; }
-
         public string first_name { get; set; }
         public string middle_name { get; set; }
         public string last_name { get; set; }
-        [JsonIgnore]
 
+        [JsonIgnore]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<book> books { get; set; }
     }
